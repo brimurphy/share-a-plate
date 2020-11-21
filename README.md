@@ -1,45 +1,150 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Comamos En Casa
 
-Welcome USER_NAME,
+<!-- Space reserved for site img and links to live site and github -->
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## About
 
-## Gitpod Reminders
+This website is an online community shared cookbook. A place were food lovers of all levels can interact by sharing their own recipes
+and by finding other users recipes. Users can build their own cookbook with their own custom recipes and other users recipes to keep
+in one handy location.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Table of Contents
 
-`python3 -m http.server`
+<!-- Space reserved for contents -->
 
-A blue button should appear to click: *Make Public*,
+## User Experience (UX)
 
-Another blue button should appear to click: *Open Browser*.
+### User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+  * First Time User Stories
 
-A blue button should appear to click: *Make Public*,
+    - As a user, I want to navigate easily through the site
+    - As a user, I want to be able to search for recipes using specific keywords or ingredient(s)
+    - As a user, I want to register if I do not have an account
+    - As a user, I want to be able to log into my account
+    - As a user, I want to be able to contact the site admin with any queries I might have
+    - As a user, I want a responsive design on all screen sizes
 
-Another blue button should appear to click: *Open Browser*.
+  * Returning User Stories
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    - As a registered user, I want easy access to the members log in page
+    - As a registered user, I want to view my recipes and my favourite recipes from other members
+    - As a registered user, I want to be able to create new recipes
+    - As a registered user, I want to be able to edit my recipes and delete them if required
+    - As a registered user, I don't want other users able to edit or delete my recipes
+    - As a registered user, I want to add recipes I like to my page for quicker access
+    - As a registered user, 
+    - As a registered user,
 
-## Updates Since The Instructional Video
+  * Admin User Stories
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    - As an admin, I want to answer any queries a user might have through email
+    - As an admin, I want to remove reviews which are deemed to be inappropriate
+    - As an admin, I want to remove users who repeatedly break the site rules
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Design 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  ### Colour Scheme
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  <!-- Reserved for colour palettes -->
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+  ### Typography
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  <!-- Reserved for font styles -->
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+  ### Images
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  <!-- Reserved for Images -->
 
---------
+  ### Wireframes
 
-Happy coding!
+  <!-- Add wireframes link/images here -->
+
+  ### Original Sketches
+
+  <!-- Add original sketches link/images here -->
+
+## Features
+
+  ### Existing Features
+
+    * Responsive design
+
+      - This website is designed with mobile first design to ensure users experience is seamless on all devices
+
+    * Register form for new users
+
+    * Sign in form for existing users
+
+    * User page with custom recipes 
+
+    * User page with 'favourite' recipes
+
+    * Easy navigation on all devices
+
+    * Search function to find recipes quickly
+
+    * User can delete their account
+
+    * Defensive programming for deleting recipes and users
+
+    * Messages displayed on forms to help user fill out correctly
+
+ <!-- Add More features as developed here -->
+
+  ### Future Features
+
+   <!-- Add future features here -->
+
+## Technologies Used
+<!-- Add more technologies as used here -->
+  * Frontend
+    
+  * Backend
+
+  * Other
+
+    - [Balsamiq](https://balsamiq.com/) - used to create wireframes
+
+## Testing
+
+<!-- Add testing here/link to testing.md file -->
+  
+## Deployment
+
+#### Requirements
+
+  * [Python3](https://www.python.org/downloads/)
+  * [PIP](https://pypi.org/project/pip/) For installing packages in Python
+  * [Git](https://git-scm.com/downloads) For version control
+  * An IDE of your choice - I have used [Visual Studio Code](https://code.visualstudio.com/)
+  * [Heroku](https://devcenter.heroku.com/articles/heroku-cli)
+  * [MongoDB](https://www.mongodb.com/) For constructing database
+
+<!-- Add steps here -->
+
+### Deploying to Heroku
+
+  1. Login to Heroku
+
+<!-- Add steps here -->
+
+### For Local Deployment
+
+#### Cloning from GitHub
+
+<!-- Add steps here -->
+
+## Credits
+
+### Content
+
+<!-- Add written content sources here -->
+
+### Media 
+
+<!-- Add Media and Image sources here -->
+
+### Acknowledgements
+
+<!-- Add acknowledgements here -->
