@@ -118,7 +118,7 @@ in one handy location.
   * [PIP](https://pypi.org/project/pip/) For installing packages in Python
   * [Git](https://git-scm.com/downloads) For version control
   * An IDE of your choice - I have used [Visual Studio Code](https://code.visualstudio.com/)
-  * [Heroku](https://devcenter.heroku.com/articles/heroku-cli)
+  * [Heroku](https://devcenter.heroku.com/)
   * [MongoDB](https://www.mongodb.com/) For constructing database
 
 <!-- Add steps here -->
