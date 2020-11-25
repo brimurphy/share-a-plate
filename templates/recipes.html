@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share A Plate</title>
+</head>
+<body>
+    {% for recipe in recipes %}
+        {{ recipe.recipe_name }}<br />
+        {{ recipe.diet }}<br />
+        {{ recipe.recipe_description }}<br />
+        {{ recipe.recipe_img }}<br />
+        {{ recipe.recipe_ingredients }}<br />
+        {{ recipe.recipe_method }}<br />
+        {{ recipe.username }}<br />
+        {{ recipe.is_favourite }}<br />
+    {% endfor %}
+</body>
+</html>
