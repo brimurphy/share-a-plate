@@ -1,4 +1,4 @@
-# Comamos En Casa
+# Share A Plate
 
 <!-- Space reserved for site img and links to live site and github -->
 
@@ -98,13 +98,34 @@ in one handy location.
 
 ## Technologies Used
 <!-- Add more technologies as used here -->
+
+  * Languages 
+
+    - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+    - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+    - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+    - [Python](https://www.python.org/)
+
   * Frontend
+
+    - [Materialize](https://materializecss.com/) - Framework used for responsive layout, navigation, recipe cards <!-- (Add more) -->
+    - [Font Awesome](https://fontawesome.com/v4.7.0/icons/) - <!-- (Add what was used) -->
     
   * Backend
 
+    - [Flask]()
+    - [PyMongo]()
+    - [Werkzueg]()
+    - [Jinja]()
+    - [MongoDB]()
+
   * Other
 
-    - [Balsamiq](https://balsamiq.com/) - used to create wireframes
+    - [GitHub](https://github.com/)
+    - [Heroku](https://heroku.com/)
+    - [Gitpod](https://gitpod.io/)
+    - [Balsamiq](https://balsamiq.com/)
+    - [RandomKeygen](https://randomkeygen.com/)
 
 ## Testing
 
