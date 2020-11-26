@@ -58,11 +58,22 @@ in one handy location.
 
   ### Wireframes
 
-  <!-- Add wireframes link/images here -->
+  I've created the wireframes for this project using Balsamiq Wireframes
+
+  To view the wireframes of this project click [HERE](https://github.com/brimurphy/share-a-plate/tree/master/wireframes)
 
   ### Original Sketches
 
-  <!-- Add original sketches link/images here -->
+  Below are the original sketches of the project:
+
+  ![Welcome Page](/static/images/sketches/sketch-home.jpg)
+  ![Recipe Page](/static/images/sketches/sketch-recipes.jpg)
+  ![My Recipes Page](/static/images/sketches/sketch-myrecipes.jpg)
+  ![Sign In/Up page](/static/images/sketches/sketch-sign-up.jpg)
+  ![Recipe Page Mobile and Tablet](/static/images/sketches/sketch-recipes-mob-tab.jpg)
+  ![My Recipe Page Mobile and Tablet](/static/images/sketches/sketch-my-recipes-mob-tab.jpg)
+  ![Sign In Page Mobile and Tablet](/static/images/sketches/sketch-sign-in-mob-tab.jpg)
+  ![Sign Up Page Mobile and Tablet](/static/images/sketches/sketch-sign-up-mob-tab.jpg)
 
 ## Features
 
