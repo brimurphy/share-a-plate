@@ -46,12 +46,25 @@ in one handy location.
 
   ### Colour Scheme
 
-  <!-- Reserved for colour palettes -->
+  To choose the colour scheme for the project I read some articles on colour and it's use in food,
+  to get a better understanding of the relationship of colours and food. The main information I 
+  gathered from these articles was to avoid dark colder colours. That is why I've tried to use bright
+  shades of colours, not too bright to affect readability but a shade brighter than I would normally use.
+
+  If you would like to read the articles referred to you can find them below:
+  [Palermo Cafe](https://palermocafe.com/colors-make-hungry/)
+  [Jenn David Design](https://jenndavid.com/colors-that-influence-food-sales-infographic/)
+  [Ashley Anastasia Howell](https://medium.com/@ashley_howell/understanding-colour-psychology-for-restaurants-brands-dbb7ffbcecae)
+
+  ![My Colour Palette](/static/images/color-palette.png)
+  I have used [Coolors](https://coolors.co/) to help generate my Colour Palette
 
   ### Typography
 
-  <!-- Reserved for font styles -->
-
+  I have used [Inknut Antiqua](https://fonts.google.com/specimen/Inknut+Antiqua?query=Inknut+Antiqua) for the Headings and Nav links
+  and [Rubik](https://fonts.google.com/specimen/Rubik?sidebar.open=true) for the content of the project. I really think these fonts 
+  work well together
+  
   ### Images
 
   <!-- Reserved for Images -->
@@ -60,20 +73,16 @@ in one handy location.
 
   I've created the wireframes for this project using Balsamiq Wireframes
 
-  To view the wireframes of this project click [HERE](https://github.com/brimurphy/share-a-plate/tree/master/wireframes)
+  To view the wireframes of this project click [HERE](https://github.com/brimurphy/share-a-plate/tree/master/static/images/wireframes)
 
   ### Original Sketches
 
   Below are the original sketches of the project:
 
-  ![Welcome Page](/static/images/sketches/sketch-home.jpg)
-  ![Recipe Page](/static/images/sketches/sketch-recipes.jpg)
-  ![My Recipes Page](/static/images/sketches/sketch-myrecipes.jpg)
-  ![Sign In/Up page](/static/images/sketches/sketch-sign-up.jpg)
-  ![Recipe Page Mobile and Tablet](/static/images/sketches/sketch-recipes-mob-tab.jpg)
-  ![My Recipe Page Mobile and Tablet](/static/images/sketches/sketch-my-recipes-mob-tab.jpg)
-  ![Sign In Page Mobile and Tablet](/static/images/sketches/sketch-sign-in-mob-tab.jpg)
-  ![Sign Up Page Mobile and Tablet](/static/images/sketches/sketch-sign-up-mob-tab.jpg)
+  ![Welcome Page](/static/images/sketches/sketch-home.jpg)  ![Recipe Page](/static/images/sketches/sketch-recipes.jpg)
+  ![My Recipes Page](/static/images/sketches/sketch-my-recipes.jpg)  ![Sign In/Up page](/static/images/sketches/sketch-sign-up.jpg)
+  ![Recipe Page Mobile and Tablet](/static/images/sketches/sketch-recipes-mob-tab.jpg)  ![My Recipe Page Mobile and Tablet](/static/images/sketches/sketch-my-recipes-mob-tab.jpg)
+  ![Sign In Page Mobile and Tablet](/static/images/sketches/sketch-sign-in-mob-tab.jpg)  ![Sign Up Page Mobile and Tablet](/static/images/sketches/sketch-sign-up-mob-tab.jpg)
 
 ## Features
 
@@ -137,6 +146,8 @@ in one handy location.
     - [Gitpod](https://gitpod.io/)
     - [Balsamiq](https://balsamiq.com/)
     - [RandomKeygen](https://randomkeygen.com/)
+    - [Coolors](https://coolors.co/)
+    - [Google Fonts](https://fonts.google.com/)
 
 ## Testing
 
