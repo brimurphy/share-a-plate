@@ -1,3 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;500;600;800&family=Inknut+Antiqua:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;800&family=Rubik:wght@300;400;500;800&display=swap');
+
+
+/* Headings
+   (Sans Serif)
+   "Inknut Antiqua" - 400 800
+
+   P text
+   Exo - 300 400 500 600 800 
+
+ */
+ * {
+    padding: 0;
+    margin: 0;
+ }
+
 body {
-    background-color: aqua;
+    font-family: Rubik, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+/* colors */
+
+.black-bg {
+    background-color: #141414;
+}
+
+.grey-bg {
+    background-color: #c2c2c2;
+}
+
+.grey-text {
+    color: #c2c2c2;
+}
+
+.orange-bg {
+    background-color: #E25F12;
+}
+
+.turquoise-bg {
+    background-color: #3acabb;
+}
+
+.turquoise-text {
+    color: #3acabb;
+}
+
+.green-bg {
+    background-color: #aedc41;
+}
+
+.green-text {
+    color: #aedc41;
+}
+
+.yellow-bg {
+    background-color: #f5d329;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(20, 20, 20, 0.5);
+}
+
+/* headings */
+
+.heading-sidenav {
+    font-family: "Inknut Antiqua", sans-serif;
+    margin: 0;
+    padding: 0.5em;
+    height: 100%;
+}
+
+.logo img {
+    padding: 5px 10px;
 }
