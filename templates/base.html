@@ -41,21 +41,21 @@
             <li><a href="#">Add Recipe</a></li>
             <li><a href="#">Log Out</a></li>
             <li><a href="#">Log In</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
           </ul>
         </div>
       </nav>
 
       <!-- Mobile Nav -->
       <ul class="sidenav orange-bg" id="mobile-demo">
-        <li><h4 class="center-align turquoise-text heading-sidenav">Share A Plate</h4></li>
+        <li><h4 class="center-align turquoise-text heading-sidenav header-text">Share A Plate</h4></li>
         <li><a href="#">Home</a></li>
         <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
         <li><a href="#">My Recipes</a></li>
         <li><a href="#">Add Recipe</a></li>
         <li><a href="#">Log Out</a></li>
         <li><a href="#">Log In</a></li>
-        <li><a href="#">Register</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
       </ul>
     </header>
 

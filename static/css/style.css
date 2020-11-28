@@ -65,13 +65,22 @@ body {
 
 /* headings */
 
-.heading-sidenav {
+.header-text {
     font-family: "Inknut Antiqua", sans-serif;
+}
+
+.heading-sidenav {
     margin: 0;
     padding: 0.5em;
-    height: 100%;
 }
 
 .logo img {
     padding: 5px 10px;
+}
+
+/* buttons */
+
+.btn-register {
+    margin: 0 auto;
+    font-family: "Inknut Antiqua", sans-serif;
 }

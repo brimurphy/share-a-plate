@@ -1,0 +1,69 @@
+{% extends "base.html" %} {% block content %}
+
+<h3 class="center-align header-text">Register</h3>
+
+<div class="row">
+  <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+    <div class="card-panel">
+      <!-- username -->
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fa fa-user-plus prefix" aria-hidden="true"></i>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+          />
+          <label for="username"></label>
+        </div>
+      </div>
+      <!-- email -->
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fa fa-envelope prefix" aria-hidden="true"></i>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email Address"
+          />
+          <label for="email"></label>
+          <div class="row"></div>
+        </div>
+        <!-- password -->
+        <div class="input-field col s12">
+          <i class="fa fa-key prefix" aria-hidden="true"></i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+          <label for="password"></label>
+        </div>
+      </div>
+      <!-- password confirm -->
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fa fa-lock prefix" aria-hidden="true"></i>
+          <input
+            type="password"
+            id="password-confirm"
+            name="password-confirm"
+            placeholder="Confirm Password"
+          />
+          <label for="password-confirm"></label>
+        </div>
+      </div>
+      <!-- register -->
+      <div class="row">
+          <button class="col s4 offset-s4 btn-large center-align btn-register turquoise-bg" type="submit" name="action">
+            Register<i class="fa fa-thumbs-up prefix right" aria-hidden="true"></i>
+        </button>
+    </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
