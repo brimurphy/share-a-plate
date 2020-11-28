@@ -67,6 +67,9 @@ in one handy location.
   
   ### Images
 
+  The sites logo is a design by [Jaylyn Breaux](https://www.behance.net/JBDesignWorks) and can be found on [Behance](https://www.behance.net/gallery/67910949/Share-A-Plate-App-Icon-Designs).
+  I have edited the colours to link in with my colour pallette using [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
+
   <!-- Reserved for Images -->
 
   ### Wireframes
@@ -148,6 +151,9 @@ in one handy location.
     - [RandomKeygen](https://randomkeygen.com/)
     - [Coolors](https://coolors.co/)
     - [Google Fonts](https://fonts.google.com/)
+    - [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
+    - [Remove BG](https://www.remove.bg/)
+
 
 ## Testing
 
