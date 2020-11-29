@@ -14,6 +14,12 @@
             id="username"
             name="username"
             placeholder="Username"
+            minlength="5"
+            maxlength="20"
+            pattern="^[a-zA-Z0-9]{5,20}$"
+            title="Username to be between 5 and 20 characters"
+            class="validate"
+            required
           />
           <label for="username"></label>
         </div>
@@ -27,6 +33,8 @@
             id="email"
             name="email"
             placeholder="Email Address"
+            class="validate"
+            required
           />
           <label for="email"></label>
           <div class="row"></div>
@@ -39,6 +47,10 @@
             id="password"
             name="password"
             placeholder="Password"
+            minlength="5"
+            maxlength="15"
+            class="validate"
+            required
           />
           <label for="password"></label>
         </div>
@@ -52,6 +64,11 @@
             id="password-confirm"
             name="password-confirm"
             placeholder="Confirm Password"
+            minlength="5"
+            maxlength="15"
+            pattern="^[a-zA-Z0-9]{5,15}$"
+            class="validate"
+            required
           />
           <label for="password-confirm"></label>
         </div>

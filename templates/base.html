@@ -59,7 +59,23 @@
       </ul>
     </header>
 
-    {% block content %} {% endblock %}
+    <section>
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="row flashes orange-bg">
+            <h4 class="center-align header-text">{{ message }}</h4>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    </section>
+
+    <main class="container">
+    {% block content %} 
+    {% endblock %}
+    </main>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
