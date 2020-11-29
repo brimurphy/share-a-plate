@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block content %}
+
+<h3 class="center-align header-text">Log In</h3>
+
+<div class="row">
+  <form
+    class="col s12 m8 offset-m2"
+    method="POST"
+    action="{{ url_for('log_in') }}"
+  >
+    <div class="card-panel">
+      <!-- username -->
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fa fa-user-plus prefix" aria-hidden="true"></i>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+          />
+          <label for="username"></label>
+        </div>
+      </div>
+      <!-- password -->
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fa fa-key prefix" aria-hidden="true"></i>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+          <label for="password"></label>
+        </div>
+      </div>
+
+      <!-- log in -->
+      <div class="row">
+        <button
+          class="col s4 offset-s4 btn-large center-align btn-register turquoise-bg"
+          type="submit"
+          name="action"
+        >
+          Log In<i class="fa fa-thumbs-up prefix right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
