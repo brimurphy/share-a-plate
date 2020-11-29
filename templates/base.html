@@ -28,14 +28,14 @@
       <!-- Navbar -->
       <nav class="nav-extended text-shadow orange-bg">
         <div class="nav-wrapper">
-          <a href="{{ url_for('recipes') }}" class="brand-logo logo"
+          <a href="{{ url_for('home') }}" class="brand-logo logo"
             ><img src="/static/images/logo.png"
           /></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
             ><i class="fas fa-bars turquoise-text" aria-hidden="true"></i
           ></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
             <li><a href="#">My Recipes</a></li>
             <li><a href="#">Add Recipe</a></li>
@@ -49,7 +49,7 @@
       <!-- Mobile Nav -->
       <ul class="sidenav orange-bg" id="mobile-demo">
         <li><h4 class="center-align turquoise-text heading-sidenav header-text">Share A Plate</h4></li>
-        <li><a href="#">Home</a></li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
         <li><a href="#">My Recipes</a></li>
         <li><a href="#">Add Recipe</a></li>

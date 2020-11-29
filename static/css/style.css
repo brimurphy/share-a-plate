@@ -39,6 +39,10 @@ body {
     background-color: #E25F12;
 }
 
+.orange-text {
+    color: #E25F12;
+}
+
 .turquoise-bg {
     background-color: #3acabb;
 }
@@ -83,4 +87,12 @@ body {
 .btn-register {
     margin: 0 auto;
     font-family: "Inknut Antiqua", sans-serif;
+}
+
+.home-screen {
+    border: 1px solid #141414;
+    margin-top: 4rem;
+    width: 80%;
+    margin-left: 10%;
+    padding: 20px 0 40px;
 }

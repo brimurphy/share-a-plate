@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<section class="home-screen row">
+  <h2 class="center-align header-text">Share A Plate</h2>
+  <div class="col s12">
+    <div class="col m6 hide-on-small-only">
+      <img src="../static/images/hero-image-4.jpg" />
+    </div>
+    <div class="col s12 m6">
+      <div class="card medium">
+        <div class="card-content">
+          <h3 class="card-title center-align header-text">Welcome</h3>
+          <p class="center-align">
+            Come join our community of food lovers
+            Create your own online cookbook
+            Access to all your favourite recipes
+            Together can make the world a little bit tastier!
+          </p>
+        </div>
+      </div>
+      <div class="center-align">
+        <a href="{{ url_for('log_in') }}" class="btn orange-bg">Log In</a>
+        <a href="{{ url_for('register') }}" class="btn orange-bg">Register</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
