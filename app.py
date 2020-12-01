@@ -39,6 +39,10 @@ def register():
         registered_email = mongo.db.users.find_one(
             {"email": request.form.get("email").lower()})
 
+        password = request.form.get('password')
+        password_confirm = request.form.get('password-confirm')
+
+        # check form fields are unique
         if registered_user:
             flash("Username Already Exists")
             return redirect(url_for("register"))
@@ -46,7 +50,12 @@ def register():
         elif registered_email:
             flash("Email Already In Use")
             return redirect(url_for("register"))
-        # confirm password function in here
+
+        # check passwords match
+        elif password != password_confirm:
+            flash("Passwords Don't Match")
+            return redirect(url_for("register"))
+
         register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
