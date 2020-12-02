@@ -26,7 +26,7 @@ def home():
 
 @app.route("/recipes")
 def recipes():
-    recipes = mongo.db.recipes.find()
+    recipes = mongo.db.recipes.find_one()
     return render_template("recipes.html", recipes=recipes)
 
 
@@ -65,6 +65,7 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Succesful!")
+        return redirect(url_for('my_recipes', username=session["user"]))
     return render_template("register.html")
 
 
@@ -82,6 +83,8 @@ def log_in():
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome {}, what are we cooking today?".format(
                     request.form.get("username").capitalize()))
+                return redirect(
+                    url_for('my_recipes', username=session["user"]))
             else:
                 # passwords don't match
                 flash("Incorrect Username and/or Password")
@@ -92,6 +95,13 @@ def log_in():
             return redirect("log_in")
 
     return render_template("login.html")
+
+
+@app.route("/my_recipes/<username>", methods=["GET", "POST"])
+def my_recipes(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("my_recipes.html", username=username)
 
 
 if __name__ == "__main__":
