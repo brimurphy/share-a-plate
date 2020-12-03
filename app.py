@@ -69,8 +69,8 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/log_in", methods=["GET", "POST"])
-def log_in():
+@app.route("/login", methods=["GET", "POST"])
+def login():
     if request.method == "POST":
         # check user exists in db
         registered_user = mongo.db.users.find_one(
@@ -88,11 +88,11 @@ def log_in():
             else:
                 # passwords don't match
                 flash("Incorrect Username and/or Password")
-                return redirect("log_in")
+                return redirect(url_for("login"))
         else:
             # user doesn't exist in db
             flash("Incorrect Username and/or Password")
-            return redirect("log_in")
+            return redirect(url_for("login"))
 
     return render_template("login.html")
 
@@ -101,7 +101,19 @@ def log_in():
 def my_recipes(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("my_recipes.html", username=username)
+
+    if session["user"]:
+        return render_template("my_recipes.html", username=username)
+
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    flash("You've Successfully Logged Out")
+    # use pop instead of clear as affects flash msg
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":

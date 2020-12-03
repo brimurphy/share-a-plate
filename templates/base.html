@@ -35,13 +35,16 @@
             ><i class="fas fa-bars turquoise-text" aria-hidden="true"></i
           ></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
-            <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
-            <li><a href="#">Add Recipe</a></li>
-            <li><a href="#">Log Out</a></li>
-            <li><a href="{{ url_for('log_in') }}">Log In</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+            {% if session.user %}
+              <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
+              <li><a href="#">Add Recipe</a></li>
+              <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+              <li><a href="{{ url_for('login') }}">Log In</a></li>
+              <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
           </ul>
         </div>
       </nav>
@@ -51,30 +54,33 @@
         <li><h4 class="center-align turquoise-text heading-sidenav header-text">Share A Plate</h4></li>
         <li><a href="{{ url_for('home') }}">Home</a></li>
         <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
-        <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
-        <li><a href="#">Add Recipe</a></li>
-        <li><a href="#">Log Out</a></li>
-        <li><a href="{{ url_for('log_in') }}">Log In</a></li>
-        <li><a href="{{ url_for('register') }}">Register</a></li>
+          {% if session.user %}
+            <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
+            <li><a href="#">Add Recipe</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          {% else %}
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+          {% endif %}
       </ul>
     </header>
 
     <section>
     <!-- flash messages -->
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for message in messages %}
-          <div class="row flashes orange-bg">
-            <h4 class="center-align header-text">{{ message }}</h4>
-          </div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="row flashes orange-bg">
+              <h4 class="center-align header-text">{{ message }}</h4>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
     </section>
 
     <main class="container">
-    {% block content %} 
-    {% endblock %}
+      {% block content %} 
+      {% endblock %}
     </main>
 
     <script
