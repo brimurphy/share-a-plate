@@ -90,7 +90,7 @@ body {
 .flashes {
     margin-top: 1rem;
     padding: 5px;
-    line-height: 2;
+    line-height: 1.5;
     width: 50%;
     border-radius: 5px;
 }
