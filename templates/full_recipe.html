@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+
+  <h3 class="center-align header-text text-shadow black-text">Recipes</h3>
+ 
+    <section class="row">
+    {% for recipe in recipes %}
+      <div class="col s12 m6 l4">
+        <div class="card orange-bg">
+          <div class="card-image">
+          <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
+            <img src="{{ recipe.recipe_img }}">
+            <span class="card-title text-shadow header-text black-text">{{ recipe.recipe_name }}</span>
+            
+          </div>
+          <div class="card-content">
+            <p>{{ recipe.recipe_description }}</p>
+            <span class="text-shadow black-text">By: {{ recipe.username.capitalize() }}</span>
+          </div>
+          <div class="card-action">
+            <a href="#">Full Recipe</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </section>
+    
+  
+
+{% endblock %}

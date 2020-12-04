@@ -105,9 +105,15 @@ def my_recipes(username):
     recipes = list(mongo.db.recipes.find())
 
     if session["user"]:
-        return render_template("my_recipes.html", username=username, recipes=recipes)
+        return render_template(
+            "my_recipes.html", username=username, recipes=recipes)
 
     return redirect(url_for("login"))
+
+
+@app.route("/full_recipe")
+def full_recipe():
+    return render_template("full_recipe.html")
 
 
 @app.route("/logout")
