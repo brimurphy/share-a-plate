@@ -1,14 +1,62 @@
 {% extends "base.html" %} 
 {% block content %}
 
-<div class="row">
-  <div class="col s12 m8 offset-m2">
-    <div class="card-panel">
-      <h3 class="center-align">
-      {{ username.capitalize() }}'s Recipes
-      </h3>
-    </div>
-  </div>
-</div>
+    <section class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h3 class="center-align header-text text-shadow black-text">
+            {{ username.capitalize() }}'s Recipes
+          </h3>
+          <div class="row">
+            {% for recipe in recipes %}
+            <div class="col s12 m6 l4">
+              <div class="card orange-bg">
+                <div class="card-image">
+                  <img src="{{ recipe.recipe_img }}">
+                  <span class="card-title text-shadow header-text black-text">{{ recipe.recipe_name }}</span> 
+                </div>
+                <div class="card-content">
+                  <p>{{ recipe.recipe_description }}</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">Full Recipe</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="col s12">
+        <div class="card-panel">
+          <h3 class="center-align header-text text-shadow black-text">
+            Favourites
+          </h3>
+          <div class="row">
+            {% for recipe in recipes %}
+            <div class="col s12 m6 l4">
+              <div class="card orange-bg">
+                <div class="card-image">
+                  <img src="{{ recipe.recipe_img }}">
+                  <span class="card-title text-shadow header-text black-text">{{ recipe.recipe_name }}</span> 
+                </div>
+                <div class="card-content">
+                  <p>{{ recipe.recipe_description }}</p>
+                  <span class="text-shadow black-text">By: {{ recipe.username.capitalize() }}</span>
+                </div>
+                <div class="card-action">
+                  <a href="#">Full Recipe</a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 {% endblock %}
