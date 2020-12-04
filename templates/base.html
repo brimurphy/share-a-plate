@@ -71,7 +71,7 @@
         {% if messages %}
           {% for message in messages %}
             <div class="row flashes orange-bg">
-              <h4 class="center-align header-text">{{ message }}</h4>
+              <h4 class="center-align header-text text-shadow">{{ message }}</h4>
             </div>
           {% endfor %}
         {% endif %}
@@ -79,7 +79,8 @@
     </section>
 
     <main class="container">
-      {% block content %} 
+      {% block content %}
+       
       {% endblock %}
     </main>
 

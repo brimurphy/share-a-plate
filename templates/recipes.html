@@ -1,15 +1,28 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
+  <h3 class="center-align header-text text-shadow black-text">Recipes</h3>
+ 
+    <div class="row">
     {% for recipe in recipes %}
-        {{ recipe.recipe_name }}<br />
-        {{ recipe.diet }}<br />
-        {{ recipe.recipe_description }}<br />
-        {{ recipe.recipe_img }}<br />
-        {{ recipe.recipe_ingredients }}<br />
-        {{ recipe.recipe_method }}<br />
-        {{ recipe.username }}<br />
-        {{ recipe.is_favourite }}<br />
-    {% endfor %}
+      <div class="col s12 m6 l4">
+        <div class="card orange-bg">
+          <div class="card-image">
+            <img src="{{ recipe.recipe_img }}">
+            <span class="card-title text-shadow header-text black-text">{{ recipe.recipe_name }}</span>
+            
+          </div>
+          <div class="card-content">
+            <p>{{ recipe.recipe_description }}</p>
+            <span class="text-shadow black-text">By: {{ recipe.username.capitalize() }}</span>
+          </div>
+          <div class="card-action">
+            <a href="#">Full Recipe</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    
+  
 
 {% endblock %}
