@@ -17,6 +17,10 @@ body {
     background-color: #141414;
 }
 
+.black-text {
+    color: #141414;
+}
+
 .grey-bg {
     background-color: #c2c2c2;
 }
@@ -68,6 +72,19 @@ body {
     padding: 0.5em;
 }
 
+.heading-full-recipe {
+    margin-top: 2em;    
+}
+
+.heading-full-recipe h3 {
+    margin: 1.5rem;
+}
+
+.heading-full-recipe,
+.full-recipe {
+    border: 2px solid #000000;
+} 
+
 .logo img {
     padding: 5px 10px;
 }
@@ -93,4 +110,33 @@ body {
     line-height: 1.5;
     width: 50%;
     border-radius: 5px;
+}
+
+.recipe-method {
+    counter-reset: step;
+    
+}
+
+.recipe-method li::before {
+    font-weight: 500;
+    counter-increment: step;
+    content: "Step " counter(step) ": ";
+}
+
+.recipe-method li,
+.ingredient li {
+    margin-left: 1em;
+}
+
+.recipe-key {
+    margin: 0.5rem;
+}
+
+.recipe-key:first-of-type {
+    margin-top: 2em;
+}
+
+.recipe-key > a,
+.cta-btn > a {
+    margin-right: 1em;
 }

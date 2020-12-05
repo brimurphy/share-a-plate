@@ -1,29 +1,36 @@
-{% extends "base.html" %} {% block content %}
-
-  <h3 class="center-align header-text text-shadow black-text">Recipes</h3>
+{% extends "base.html" %} 
+  {% block content %}
  
+    <!-- full recipe card -->
     <section class="row">
-    {% for recipe in recipes %}
-      <div class="col s12 m6 l4">
-        <div class="card orange-bg">
-          <div class="card-image">
+      <div class="col s12 heading-full-recipe">
+          <h3 class="center-align header-text text-shadow black-text">Full Recipe</h3>        
+      </div>
+      <div class="col s12 full-recipe">
+        <div class="col s6 right center-align">
           <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
-            <img src="{{ recipe.recipe_img }}">
-            <span class="card-title text-shadow header-text black-text">{{ recipe.recipe_name }}</span>
-            
-          </div>
-          <div class="card-content">
-            <p>{{ recipe.recipe_description }}</p>
-            <span class="text-shadow black-text">By: {{ recipe.username.capitalize() }}</span>
-          </div>
-          <div class="card-action">
-            <a href="#">Full Recipe</a>
+          <img src="../static/images/color-palette.png" alt="Recipe Image" width="400" height="300">
+          <div class="center-align recipe-key">  
+            <a class="btn btn-large turquoise-bg" href="#">Edit</a>
+            <a class="btn btn-large red darken-1" href="#">Delete</a>
           </div>
         </div>
+        <div class="col s6">
+          <p class="black-text recipe-key"><strong>By: </strong>recipe owner</p>
+          <p class="black-text recipe-key"><strong>Cooking Time: </strong>time</p>
+          <p class="black-text recipe-key"><strong>Ingredients: </strong>
+            <ul class="ingredient">
+              <li>corn</li>
+            </ul>
+          </p>
+          <p class="black-text recipe-key"><strong>Method:</strong>
+            <ul class="recipe-method">
+              <li>Boil water</li>
+              <li>Boil water</li>
+            </ul>
+          </p>
+        </div>
       </div>
-      {% endfor %}
-    </section>
-    
-  
+    </section> 
 
-{% endblock %}
+  {% endblock %}
