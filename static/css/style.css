@@ -9,16 +9,13 @@ body {
     font-family: Rubik, sans-serif;
     font-weight: 300;
     font-size: 16px;
+    color: #141414;
 }
 
 /* colors */
 
 .black-bg {
     background-color: #141414;
-}
-
-.black-text {
-    color: #141414;
 }
 
 .grey-bg {
@@ -112,6 +109,17 @@ body {
     border-radius: 5px;
 }
 
+/* recipe cards */
+.full-recipe,
+.add-recipe {
+    border-top: none;
+}
+
+.add-recipe:first-child,
+.recipe-key:first-of-type {
+    margin-top: 2em;
+} 
+
 .recipe-method {
     counter-reset: step;
     
@@ -130,10 +138,6 @@ body {
 
 .recipe-key {
     margin: 0.5rem;
-}
-
-.recipe-key:first-of-type {
-    margin-top: 2em;
 }
 
 .recipe-key > a,

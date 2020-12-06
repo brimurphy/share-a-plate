@@ -6,43 +6,76 @@
       <div class="col s12 heading-full-recipe orange-bg">
         <h3 class="center-align header-text text-shadow">Add Recipe</h3>        
       </div>
-      <div class="col s12 full-recipe">
-        <div class="input-field col s12">
-          <select>
-            <option value="" disabled selected>Choose your option</option>
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-          </select>
-          <label>Materialize Select</label>
-        </div>
         <div class="row">
-          <form class="col s12">
+          <form class="col s12 add-recipe">
+            <!-- diet -->
             <div class="row">
-              <div class="input-field col s12">
-                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                <label for="first_name">First Name</label>
-              </div>
-              <div class="input-field col s12">
-                <input id="last_name" type="text" class="validate">
-                <label for="last_name">Last Name</label>
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">local_dining</i>
+                <select>
+                  <option value="" disabled selected>Select Diet</option>
+                  <option value="1">Meat</option>
+                  <option value="1">Fish</option>
+                  <option value="2">Vegetarian</option>
+                  <option value="3">Vegan</option>
+                </select>
+                <label></label>
               </div>
             </div>
+            <!-- recipe name -->
             <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">add</i>
+                <input placeholder="Name" id="recipe_name" name="recipe_name" type="text" class="validate" required>
+                <label for="recipe_name"></label>
               </div>
             </div>
+              <!-- recipe description -->
             <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">description</i>
+                <input id="recipe_description" name="recipe_description" type="text" class="validate" required>
+                <label for="recipe_description">Description</label>
               </div>
+            </div>
+            <!-- cooking time -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">hourglass_full</i>
+                <input placeholder="Cooking Time" id="cooking_time" name="cooking_time" type="time" class="validate" required>
+                <label for="cooking_time"></label>
+              </div>
+            </div>
+            <!-- recipe image -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">camera_alt</i>
+                <input id="recipe_image" name="recipe_image" type="url" class="validate" required>
+                <label for="recipe_image">Enter Image URL</label>
+              </div>
+            </div>
+            <!-- recipe ingredients -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">kitchen</i>
+                <input id="recipe_ingredients" name="recipe_ingredients" type="text" class="validate" required>
+                <label for="recipe_ingredients">Ingredients</label>
+              </div>
+            </div>
+            <!-- recipe method -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">subject</i>
+                <input id="recipe_method" type="text" class="validate" required>
+                <label for="recipe_method">Method</label>
+              </div>
+            </div>
+            <div class="center-align cta-btn">
+              <a href="{{ url_for('login') }}" class="btn btn-large orangeturquoise-bg">Add</a>
+              <a href="{{ url_for('register') }}" class="btn btn-large red darken-1">Cancel</a>
             </div>
           </form>
         </div>
-      </div>
     </section> 
 
   {% endblock %}
