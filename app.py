@@ -116,6 +116,11 @@ def full_recipe():
     return render_template("full_recipe.html")
 
 
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
+
+
 @app.route("/logout")
 def logout():
     flash("You've Successfully Logged Out")
