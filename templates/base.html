@@ -30,7 +30,7 @@
       <nav class="nav-extended text-shadow orange-bg">
         <div class="nav-wrapper">
           <a href="{{ url_for('home') }}" class="brand-logo logo"
-            ><img src="/static/images/logo.png"
+            ><img src="{{ url_for('static', filename='images/logo.png') }}"
           /></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
             ><i class="fas fa-bars turquoise-text" aria-hidden="true"></i
@@ -90,8 +90,17 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <a href="{{ url_for('home') }}" class="brand-logo logo">
+              <img src="{{ url_for('static', filename='images/logo.png') }}" />
+            </a>
+            
+            <p class="grey-text text-lighten-4">
+              Share A Plate is a recipe and cookbook site where you can create your own
+              personalised digital cookbooks using recipes from other members and combined with your own ideas. 
+              Learn more about what makes us different from other recipe sites and cookbook products here.
+
+              Check out some easy home recipes and get cooking.
+            </p>
           </div>
           <div class="col l4 offset-l2 s12">
             <ul>
@@ -111,7 +120,7 @@
       </div>
       <div class="footer-copyright">
         <div class="container right">
-          © 2014 Copyright Text
+          © 2020 Brian Murphy
           <ul class="right">
             <li><a class="grey-text text-lighten-4 left" href="https://www.instagram.com/shareplatemag/?hl=en" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
             <li><a class="grey-text text-lighten-4 left" href="https://www.facebook.com/shareplatemag/" target="_blank"><i class="fab fa-facebook-square" aria-hidden="true"></i></a></li>
