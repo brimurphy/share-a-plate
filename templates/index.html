@@ -5,7 +5,7 @@
       <h2 class="center-align header-text">Share A Plate</h2>
       <div class="col s12">
         <div class="col m6 hide-on-small-only">
-          <img src="../static/images/hero-image-4.jpg" />
+          <img src="{{ url_for('static', filename='images/hero-image-4.jpg') }}" />
         </div>
         <div class="col s12 m6">
           <div class="card medium">
@@ -20,8 +20,8 @@
             </div>
           </div>
           <div class="center-align cta-btn">
-            <a href="{{ url_for('login') }}" class="btn orange-bg">Log In</a>
-            <a href="{{ url_for('register') }}" class="btn orange-bg">Register</a>
+            <a href="{{ url_for('login') }}" class="btn btn-large orange-bg">Log In</a>
+            <a href="{{ url_for('register') }}" class="btn btn-large orange-bg">Register</a>
           </div>
         </div>
       </div>
