@@ -7,19 +7,18 @@
         <h3 class="center-align header-text text-shadow">Add Recipe</h3>        
       </div>
         <div class="row">
-          <form class="col s12 add-recipe">
+          <form class="col s12 add-recipe" method="POST" action="">
             <!-- diet -->
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix turquoise-text">local_dining</i>
-                <select>
+                <select id="diet" name="diet" class="validate" required>
                   <option value="" disabled selected>Select Diet</option>
-                  <option value="1">Meat</option>
-                  <option value="1">Fish</option>
-                  <option value="2">Vegetarian</option>
-                  <option value="3">Vegan</option>
+                  {% for diet in diets %}
+                    <option value="{{ diet.diet }}">{{ diet.diet }}</option>
+                  {% endfor %}
                 </select>
-                <label></label>
+                <label for="diet"></label>
               </div>
             </div>
             <!-- recipe name -->

@@ -118,7 +118,8 @@ def full_recipe():
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    diets = mongo.db.diets.find().sort("diet", 1)
+    return render_template("add_recipe.html", diets=diets)
 
 
 @app.route("/logout")
