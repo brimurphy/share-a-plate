@@ -7,7 +7,7 @@
         <h3 class="center-align header-text text-shadow">Add Recipe</h3>        
       </div>
         <div class="row">
-          <form class="col s12 add-recipe" method="POST" action="">
+          <form class="col s12 add-recipe" method="POST" action="{{ url_for('add_recipe') }}">
             <!-- diet -->
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
@@ -49,8 +49,8 @@
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix turquoise-text">camera_alt</i>
-                <input id="recipe_image" name="recipe_image" type="url" class="validate" required>
-                <label for="recipe_image">Enter Image URL</label>
+                <input id="recipe_img" name="recipe_img" type="url" class="validate" required>
+                <label for="recipe_img">Enter Image URL</label>
               </div>
             </div>
             <!-- recipe ingredients -->
@@ -69,10 +69,12 @@
                 <label for="recipe_method">Method</label>
               </div>
             </div>
-            <div class="center-align cta-btn">
-              <a href="{{ url_for('login') }}" class="btn btn-large orangeturquoise-bg">Add</a>
-              <a href="{{ url_for('register') }}" class="btn btn-large red darken-1">Cancel</a>
-            </div>
+            <div class="row">
+              <div class="col s12 center-align cta-btn">
+                <button type="submit" class="btn btn-large turquoise-bg">Add</button>
+                <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn btn-large red darken-1">Cancel</a>
+              </div>
+            </div>  
           </form>
         </div>
     </section> 

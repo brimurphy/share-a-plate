@@ -116,8 +116,20 @@ def full_recipe():
     return render_template("full_recipe.html")
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if request.method == "POST":
+        recipe = {
+            "diet": request.form.get("diet"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "cooking_time": request.form.get("cooking_time"),
+            "recipe_img": request.form.get("recipe_img"),
+            "username": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe added, Thanks for sharing")
+        return redirect(url_for("my_recipes"))
     diets = mongo.db.diets.find().sort("diet", 1)
     return render_template("add_recipe.html", diets=diets)
 
