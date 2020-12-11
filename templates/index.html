@@ -19,14 +19,21 @@
               </p>
             </div>
           </div>
-          <div class="center-align cta-btn">
-            <a href="{{ url_for('login') }}" 
-              class="btn btn-large orange-bg text-shadow btn-font">Log In</a>
-            <a href="{{ url_for('register') }}"
-              class="btn btn-large orange-bg text-shadow btn-font">Register</a>
-          </div>
+          {% if session.user %}
+            <div class="center-align cta-btn">
+              <a href="{{ url_for('logout') }}" 
+                class="btn btn-large orange-bg text-shadow btn-font">Log Out</a>
+            </div>
+          {% else %}
+            <div class="center-align cta-btn">
+              <a href="{{ url_for('login') }}" 
+                class="btn btn-large orange-bg text-shadow btn-font">Log In</a>
+              <a href="{{ url_for('register') }}"
+                class="btn btn-large orange-bg text-shadow btn-font">Register</a>
+           </div>
+          {% endif %}   
         </div>
-      </div>
+      </div>  
     </section>
 
   {% endblock %}

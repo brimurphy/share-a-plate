@@ -11,13 +11,17 @@
         <div class="col s12 full-recipe">
           <!-- recipe image -->
           <div class="col s12 l6 right center-align">
-            <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
+            {% if session.user %}  
+              <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
+            {% endif %}
             <img src="{{ recipe.recipe_img }}" alt="Image of {{ recipe.recipe_name }}" width="400" height="300">
             <div class="col s12 center-align recipe-key">
-              <!-- edit/delete btn -->
-              <a class="btn btn-large turquoise-bg text-shadow btn-font"
-                href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
-              <a class="btn btn-large red darken-1 text-shadow btn-fontr" href="#">Delete</a>
+              {% if session.user %}
+                <!-- edit/delete btn -->
+                <a class="btn btn-large turquoise-bg text-shadow btn-font"
+                  href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">Edit</a>
+                <a class="btn btn-large red darken-1 text-shadow btn-fontr" href="#">Delete</a>
+              {% endif %}
             </div>  
           </div>
           <div class="row">  
