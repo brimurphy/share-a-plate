@@ -1,37 +1,44 @@
-{% extends "base.html" %} 
-  {% block content %}
- 
-    <!-- full recipe card -->
-    <section class="row">
-      <div class="col s12 heading-full-recipe orange-bg">
-          <h3 class="center-align header-text text-shadow">Full Recipe</h3>        
-      </div>
-      <div class="col s12 full-recipe">
-        <div class="col s6 right center-align">
-          <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
-          <img src="../static/images/color-palette.png" alt="Recipe Image" width="400" height="300">
-          <div class="center-align recipe-key">  
-            <a class="btn btn-large turquoise-bg text-shadow btn-font" href="#">Edit</a>
-            <a class="btn btn-large red darken-1 text-shadow btn-font" href="#">Delete</a>
+{% extends "base.html" %}
+{% block content %}
+
+<!-- full recipe card -->
+  <section class="row">
+    <div class="col s12 heading-full-recipe orange-bg">
+      <h3 class="center-align header-text text-shadow">{{ recipe.recipe_name }}</h3>
+    </div>
+    <div class="row">
+      {% for recipe in recipes %}
+        <div class="col s12 full-recipe">
+          <!-- recipe image -->
+          <div class="col s12 l6 right center-align">
+            <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
+            <img src="{{ recipe.recipe_img }}" alt="Image of {{ recipe.recipe_name }}" width="400" height="300">
+            <div class="col s12 center-align recipe-key">
+              <!-- edit/delete btn -->
+              <a class="btn btn-large turquoise-bg text-shadow btn-font" href="#">Edit</a>
+              <a class="btn btn-large red darken-1 text-shadow btn-fontr" href="#">Delete</a>
+            </div>  
+          </div>
+          <div class="row">  
+            <!-- recipe data -->
+            <div class="col s12 m6">
+              <p class="recipe-key"><strong>By: </strong>{{ recipe.username.capitalize() }}</p>
+              <p class="recipe-key"><strong>Cooking Time: </strong>{{ recipe.cooking_time }} min</p>
+              <p class="recipe-key"><strong>Diet: </strong>{{ recipe.diet.capitalize() }}</p>
+              <p class="recipe-key"><strong>Ingredients: </strong>
+                <ul class="ingredient">
+                  <li>{{ recipe.recipe_ingredients }}</li>
+                </ul>
+              </p>
+              <p class="recipe-key"><strong>Method:</strong>
+                <ul class="recipe-method">
+                  <li>{{ recipe.recipe_method }}</li>    
+                </ul>
+              </p>
+            </div>
           </div>
         </div>
-        <div class="col s6">
-        <p class="recipe-key"><strong>Diet: </strong>Meat</p>
-          <p class="recipe-key"><strong>By: </strong>recipe owner</p>
-          <p class="recipe-key"><strong>Cooking Time: </strong>time</p>
-          <p class="recipe-key"><strong>Ingredients: </strong>
-            <ul class="ingredient">
-              <li>corn</li>
-            </ul>
-          </p>
-          <p class="recipe-key"><strong>Method:</strong>
-            <ul class="recipe-method">
-              <li>Boil water</li>
-              <li>Boil water</li>
-            </ul>
-          </p>
-        </div>
-      </div>
+      {% endfor %}
       <div class="row">
         <div class="col s12 center-align">
           <button id="btn-back" class="btn btn-large green-bg text-shadow btn-font">
@@ -39,6 +46,7 @@
           </button>
         </div>
       </div>
-    </section> 
+    </div>
+  </section>
 
-  {% endblock %}
+{% endblock %}

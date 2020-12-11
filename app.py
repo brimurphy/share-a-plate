@@ -111,9 +111,14 @@ def my_recipes(username):
     return redirect(url_for("login"))
 
 
-@app.route("/full_recipe")
-def full_recipe():
-    return render_template("full_recipe.html")
+@app.route("/full_recipe/<recipe_id>")
+def full_recipe(recipe_id):
+    recipe_id = mongo.db.recipes.find_one(
+            {"_id": ObjectId(recipe_id)}
+        )
+    recipes = list(mongo.db.recipes.find(recipe_id))
+    return render_template(
+        "full_recipe.html", recipe=recipe_id, recipes=recipes)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
