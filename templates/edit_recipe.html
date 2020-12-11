@@ -4,7 +4,7 @@
     <!-- edit recipe card -->
     <section class="row">
       <div class="col s12 heading-full-recipe orange-bg">
-        <h3 class="center-align header-text text-shadow">Edit Recipe</h3>        
+        <h3 class="center-align header-text text-shadow">{{ recipe.recipe_name }}</h3>        
       </div>
         <div class="row">
           <form class="col s12 add-recipe"
@@ -16,9 +16,13 @@
               <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix turquoise-text">local_dining</i>
                 <select id="diet" name="diet" class="validate" required>
-                  <option value="" disabled selected>Select Diet</option>
+                  <option value="" disabled>Select Diet</option>
                   {% for diet in diets %}
-                    <option value="{{ diet.diet }}">{{ diet.diet }}</option>
+                    {% if diet.diet == recipe.diet %}
+                      <option value="{{ diet.diet }}" selected>{{ diet.diet }}</option>
+                    {% else %}
+                      <option value="{{ diet.diet }}">{{ diet.diet }}</option>
+                    {% endif %}
                   {% endfor %}
                 </select>
                 <label for="diet"></label>
@@ -28,7 +32,13 @@
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix turquoise-text">add</i>
-                <input placeholder="Name" id="recipe_name" name="recipe_name" type="text" class="validate" required>
+                <input placeholder="Name"
+                  id="recipe_name"
+                  name="recipe_name" 
+                  type="text" 
+                  class="validate"
+                  value="{{ recipe.recipe_name }}" 
+                  required>
                 <label for="recipe_name"></label>
               </div>
             </div>
@@ -36,7 +46,12 @@
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix turquoise-text">description</i>
-                <input id="recipe_description" name="recipe_description" type="text" class="validate" required>
+                <input id="recipe_description"
+                  name="recipe_description" 
+                  type="text" 
+                  class="validate"
+                  value="{{ recipe.recipe_description }}" 
+                  required>
                 <label for="recipe_description">Description</label>
               </div>
             </div>
@@ -44,7 +59,13 @@
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix turquoise-text">hourglass_full</i>
-                <input placeholder="Cooking Time" id="cooking_time" name="cooking_time" type="time" class="validate" required>
+                <input placeholder="Cooking Time" 
+                  id="cooking_time" 
+                  name="cooking_time" 
+                  type="time" 
+                  class="validate"
+                  value="{{ recipe.cooking_time }}" 
+                  required>
                 <label for="cooking_time"></label>
               </div>
             </div>
@@ -52,7 +73,12 @@
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix turquoise-text">camera_alt</i>
-                <input id="recipe_img" name="recipe_img" type="url" class="validate" required>
+                <input id="recipe_img" 
+                  name="recipe_img" 
+                  type="url" 
+                  class="validate" 
+                  value="{{ recipe.recipe_img }}"
+                  required>
                 <label for="recipe_img">Enter Image URL</label>
               </div>
             </div>
@@ -60,7 +86,12 @@
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix turquoise-text">kitchen</i>
-                <input id="recipe_ingredients" name="recipe_ingredients" type="text" class="validate" required>
+                <input id="recipe_ingredients" 
+                  name="recipe_ingredients" 
+                  type="text" 
+                  class="validate" 
+                  value="{{ recipe.recipe_ingredients }}"
+                  required>
                 <label for="recipe_ingredients">Ingredients</label>
               </div>
             </div>
@@ -68,14 +99,19 @@
             <div class="row">
               <div class="input-field col s12 m8 offset-m2">
                 <i class="material-icons prefix turquoise-text">subject</i>
-                <input id="recipe_method" type="text" class="validate" required>
+                <input id="recipe_method"
+                  type="text" 
+                  class="validate"
+                  value="{{ recipe.recipe_method }}"
+                  required>
                 <label for="recipe_method">Method</label>
               </div>
             </div>
             <div class="row">
+              <!-- update/cancel buttons -->
               <div class="col s12 center-align cta-btn">
                 <button type="submit"
-                  class="btn btn-large turquoise-bg text-shadow btn-font">Edit Recipe</button>
+                  class="btn btn-large turquoise-bg text-shadow btn-font">Update</button>
                 <a href="{{ url_for('my_recipes', username=session['user']) }}"
                    class="btn btn-large red darken-1 text-shadow btn-font">Cancel</a>
               </div>
