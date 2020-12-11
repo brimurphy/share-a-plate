@@ -104,15 +104,15 @@
           </div>
           <div class="col l4 offset-l2 s12">
             <ul>
-              <li><a class="grey-text text-lighten-3" href="">Home</a></li>
-              <li><a class="grey-text text-lighten-3" href="">Recipes</a></li>
+              <li><a class="grey-text text-lighten-3" href="{{ url_for('home') }}">Home</a></li>
+              <li><a class="grey-text text-lighten-3" href="{{ url_for('recipes') }}">Recipes</a></li>
               {% if session.user %}
-                <li><a class="grey-text text-lighten-3" href="#!">My Recipes</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Add Recipes</a></li>
-                <li><a class="grey-text text-lighten-3" href="">Log Out</a></li>
+                <li><a class="grey-text text-lighten-3" href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
+                <li><a class="grey-text text-lighten-3" href="{{ url_for('add_recipe') }}">Add Recipes</a></li>
+                <li><a class="grey-text text-lighten-3" href="{{ url_for('logout') }}">Log Out</a></li>
               {% else %}
-                <li><a class="grey-text text-lighten-3" href="">Log In</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Register</a></li>
+                <li><a class="grey-text text-lighten-3" href="{{ url_for('login') }}">Log In</a></li>
+                <li><a class="grey-text text-lighten-3" href="{{ url_for('register') }}">Register</a></li>
               {% endif %}
             </ul>
           </div>

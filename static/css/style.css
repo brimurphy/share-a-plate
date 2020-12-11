@@ -3,6 +3,7 @@
  * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
  }
 
 body {
@@ -88,8 +89,17 @@ body {
 
 /* buttons */
 
-.btn-register {
+.btn-center {
     margin: 0 auto;
+}
+
+.btn-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+}
+
+.btn-font {
     font-family: "Inknut Antiqua", sans-serif;
 }
 
@@ -111,9 +121,16 @@ body {
 }
 
 /* recipe cards */
+
 .full-recipe,
 .add-recipe {
+    position: relative;
     border-top: none;
+}
+
+.full-recipe,
+.recipe-key a {
+    margin-bottom: 1.5em;
 }
 
 .add-recipe:first-child,
@@ -142,8 +159,9 @@ body {
 }
 
 .recipe-key > a,
-.cta-btn > a {
-    margin-right: 1em;
+.cta-btn > a,
+.cta-btn > button {
+    margin-right: 2em;
 }
 
 /* footer */

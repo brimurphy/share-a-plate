@@ -71,8 +71,10 @@
             </div>
             <div class="row">
               <div class="col s12 center-align cta-btn">
-                <button type="submit" class="btn btn-large turquoise-bg">Add</button>
-                <a href="{{ url_for('my_recipes', username=session['user']) }}" class="btn btn-large red darken-1">Cancel</a>
+                <button type="submit"
+                  class="btn btn-large turquoise-bg text-shadow btn-font">Add</button>
+                <a href="{{ url_for('my_recipes', username=session['user']) }}"
+                   class="btn btn-large red darken-1 text-shadow btn-font">Cancel</a>
               </div>
             </div>  
           </form>

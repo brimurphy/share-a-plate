@@ -15,7 +15,7 @@
             <p>{{ recipe.recipe_description }}</p>
           </div>
           <div class="card-action">
-            <a href="{{ url_for('full_recipe') }}">Full Recipe</a>
+            <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}">Full Recipe</a>
             <span class="right text-shadow">By: {{ recipe.username.capitalize() }}</span>
           </div>
         </div>

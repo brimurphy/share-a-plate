@@ -14,14 +14,14 @@
                 <div class="card orange-bg">
                   <div class="card-image">
                     <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                    <img src="{{ recipe.recipe_img }}" alt="Image of {{ recipe.recipe_img }}">
+                    <img src="{{ recipe.recipe_img }}" alt="Image of {{ recipe.recipe_name }}">
                     <span class="card-title text-shadow header-text">{{ recipe.recipe_name }}</span> 
                   </div>
                   <div class="card-content">
                     <p>{{ recipe.recipe_description }}</p>
                   </div>
                   <div class="card-action">
-                    <a href="{{ url_for('full_recipe') }}">Full Recipe</a>
+                    <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}">Full Recipe</a>
                   </div>
                 </div>
               </div>
@@ -52,7 +52,7 @@
                       <p>{{ recipe.recipe_description }}</p>
                     </div>
                     <div class="card-action">
-                      <a href="{{ url_for('full_recipe') }}">Full Recipe</a>
+                      <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}">Full Recipe</a>
                       <span class="right text-shadow">By: {{ recipe.username.capitalize() }}</span>
                     </div>
                   </div>
