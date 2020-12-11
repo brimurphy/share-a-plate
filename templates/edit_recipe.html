@@ -1,0 +1,87 @@
+{% extends "base.html" %} 
+  {% block content %}
+ 
+    <!-- edit recipe card -->
+    <section class="row">
+      <div class="col s12 heading-full-recipe orange-bg">
+        <h3 class="center-align header-text text-shadow">Edit Recipe</h3>        
+      </div>
+        <div class="row">
+          <form class="col s12 add-recipe"
+            method="POST" 
+            action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+
+            <!-- diet -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">local_dining</i>
+                <select id="diet" name="diet" class="validate" required>
+                  <option value="" disabled selected>Select Diet</option>
+                  {% for diet in diets %}
+                    <option value="{{ diet.diet }}">{{ diet.diet }}</option>
+                  {% endfor %}
+                </select>
+                <label for="diet"></label>
+              </div>
+            </div>
+            <!-- recipe name -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">add</i>
+                <input placeholder="Name" id="recipe_name" name="recipe_name" type="text" class="validate" required>
+                <label for="recipe_name"></label>
+              </div>
+            </div>
+              <!-- recipe description -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">description</i>
+                <input id="recipe_description" name="recipe_description" type="text" class="validate" required>
+                <label for="recipe_description">Description</label>
+              </div>
+            </div>
+            <!-- cooking time -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">hourglass_full</i>
+                <input placeholder="Cooking Time" id="cooking_time" name="cooking_time" type="time" class="validate" required>
+                <label for="cooking_time"></label>
+              </div>
+            </div>
+            <!-- recipe image -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">camera_alt</i>
+                <input id="recipe_img" name="recipe_img" type="url" class="validate" required>
+                <label for="recipe_img">Enter Image URL</label>
+              </div>
+            </div>
+            <!-- recipe ingredients -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">kitchen</i>
+                <input id="recipe_ingredients" name="recipe_ingredients" type="text" class="validate" required>
+                <label for="recipe_ingredients">Ingredients</label>
+              </div>
+            </div>
+            <!-- recipe method -->
+            <div class="row">
+              <div class="input-field col s12 m8 offset-m2">
+                <i class="material-icons prefix turquoise-text">subject</i>
+                <input id="recipe_method" type="text" class="validate" required>
+                <label for="recipe_method">Method</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 center-align cta-btn">
+                <button type="submit"
+                  class="btn btn-large turquoise-bg text-shadow btn-font">Edit Recipe</button>
+                <a href="{{ url_for('my_recipes', username=session['user']) }}"
+                   class="btn btn-large red darken-1 text-shadow btn-font">Cancel</a>
+              </div>
+            </div>  
+          </form>
+        </div>
+    </section> 
+
+  {% endblock %}
