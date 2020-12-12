@@ -201,6 +201,19 @@ def admin_page():
         "admin_page.html", users=users, recipes=recipes, diets=diets)
 
 
+@app.route("/edit_user/<user_id>", methods=["GET", "POST"])
+def edit_user(user_id):
+    if request.method == "POST":
+        update = {
+            "is_superuser": request.form.get("edit_user")
+        }
+        mongo.db.users.update({"_id": ObjectId(user_id)}, update)
+        flash("User Updated")
+        return redirect(url_for("admin_page"))
+    user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
+    return render_template("edit_user.html", user=user)
+
+
 @app.route("/add_diet", methods=["GET", "POST"])
 def add_diet():
     if request.method == "POST":

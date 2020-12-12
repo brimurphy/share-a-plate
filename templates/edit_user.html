@@ -1,0 +1,56 @@
+{% extends "base.html" %} 
+  {% block content %}
+ 
+    <!-- add diet admin -->
+    <section class="row">
+      <div class="col s12 heading-full-recipe orange-bg">
+        <h3 class="center-align header-text text-shadow">Edit User</h3>        
+      </div>
+      <div class="row">
+        <form class="col s12 add-recipe" method="POST" action="{{ url_for('edit_user', user_id=user._id) }}">
+          <!-- edit user admin control -->
+          <div class="row">
+            <div class="input-field col s12 m8 offset-m2">
+              <i class="material-icons prefix turquoise-text">add</i>
+              <input placeholder="Is Admin" 
+                id="edituser" 
+                name="edituser"
+                minlength="3" 
+                maxlength="20" 
+                type="text" 
+                value="{{ user.is_superuser }}"
+                class="validate" 
+                required>
+              <label for="edituser">Is Admin</label>
+            </div>
+          </div>
+          <!-- <div class="switch center-align">
+            <label for="edit_user">
+              Off
+              <input 
+                id="edit_user" 
+                name="edit_user"
+                minlength="3" 
+                maxlength="20" 
+                type="checkbox" 
+                value="{{ user.is_superuser }}"
+                class="validate">
+              <span class="lever"></span>
+              On
+            </label>
+          </div> -->
+
+          <!-- submit/cancel buttons -->
+          <div class="row">
+            <div class="col s12 center-align cta-btn">
+              <button type="submit"
+                class="btn btn-large turquoise-bg text-shadow btn-font">Update</button>
+              <a href="{{ url_for('admin_page') }}"
+                class="btn btn-large red darken-1 text-shadow btn-font">Cancel</a>
+            </div>
+          </div>  
+        </form>
+      </div>
+    </section> 
+
+  {% endblock %}
