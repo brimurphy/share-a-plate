@@ -214,6 +214,19 @@ def add_diet():
     return render_template("add_diet.html")
 
 
+@app.route("/edit_diet/<diet_id>", methods=["GET", "POST"])
+def edit_diet(diet_id):
+    if request.method == "POST":
+        update = {
+            "diet": request.form.get("edit_diet")
+        }
+        mongo.db.diets.update({"_id": ObjectId(diet_id)}, update)
+        flash("Diet Updated")
+        return redirect(url_for("admin_page"))
+    diet = mongo.db.diets.find_one({"_id": ObjectId(diet_id)})
+    return render_template("edit_diet.html", diet=diet)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

@@ -62,7 +62,7 @@
                <span class="card-title center-align text-shadow">{{ diet.diet|capitalize }}</span>
              </div>
              <div class="card-action center-align">
-               <a href="#" class="btn turquoise-bg text-shadow btn-font">Edit</a>
+               <a href="{{ url_for('edit_diet', diet_id=diet._id) }}" class="btn turquoise-bg text-shadow btn-font">Edit</a>
                <a href="#" class="btn red darken-1 text-shadow btn-font">Delete</a>
              </div>
            </div>
