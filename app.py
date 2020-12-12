@@ -123,6 +123,8 @@ def full_recipe(recipe_id):
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     if request.method == "POST":
         recipe = {
             "diet": request.form.get("diet"),
@@ -130,20 +132,48 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "cooking_time": request.form.get("cooking_time"),
             "recipe_img": request.form.get("recipe_img"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method"),
             "username": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe added, Thanks for sharing")
-        return redirect(url_for("my_recipes"))
+        return redirect(url_for("my_recipes", username=username))
     diets = mongo.db.diets.find().sort("diet", 1)
     return render_template("add_recipe.html", diets=diets)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if request.method == "POST":
+        update = {
+            "diet": request.form.get("diet"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_description": request.form.get("recipe_description"),
+            "cooking_time": request.form.get("cooking_time"),
+            "recipe_img": request.form.get("recipe_img"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_method": request.form.get("recipe_method"),
+            "username": session["user"]
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, update)
+        flash("Recipe has been Updated")
+        return redirect(url_for("my_recipes", username=username))
+
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     diets = mongo.db.diets.find().sort("diet", 1)
     return render_template("edit_recipe.html", recipe=recipe, diets=diets)
+
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe has been Deleted")
+    return redirect(url_for("my_recipes", username=username))
 
 
 @app.route("/logout")
