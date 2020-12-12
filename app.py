@@ -214,6 +214,20 @@ def edit_user(user_id):
     return render_template("edit_user.html", user=user)
 
 
+@app.route("/delete_user/<user_id>")
+def delete_user(user_id):
+    mongo.db.users.remove({"_id": ObjectId(user_id)})
+    flash("User has been Deleted")
+    return redirect(url_for("admin_page"))
+
+
+@app.route("/admin_delete_recipe/<recipe_id>")
+def admin_delete_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Recipe has been Deleted")
+    return redirect(url_for("admin_page"))
+
+
 @app.route("/add_diet", methods=["GET", "POST"])
 def add_diet():
     if request.method == "POST":
@@ -238,6 +252,13 @@ def edit_diet(diet_id):
         return redirect(url_for("admin_page"))
     diet = mongo.db.diets.find_one({"_id": ObjectId(diet_id)})
     return render_template("edit_diet.html", diet=diet)
+
+
+@app.route("/delete_diet/<diet_id>")
+def delete_diet(diet_id):
+    mongo.db.diets.remove({"_id": ObjectId(diet_id)})
+    flash("Diet has been Deleted")
+    return redirect(url_for("admin_page"))
 
 
 if __name__ == "__main__":
