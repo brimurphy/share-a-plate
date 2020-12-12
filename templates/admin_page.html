@@ -47,6 +47,13 @@
    <!-- diets -->
    <section>
      <h3 class="center-align header-text text-shadow">Diets</h3>  
+     <div class="row">
+         <div class="col s12 center-align">
+             <a href="{{ url_for('add_diet') }}" class="btn-large turquoise-bg text-shadow">
+               Add Diet<i class="fa fa-plus-circle prefix white-text right text-shadow"></i>
+             </a>
+         </div>
+     </div>
      <div class="row  z-depth-2">
        {% for diet in diets %}  
          <div class="col s12 m4">

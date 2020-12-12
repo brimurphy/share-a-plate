@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    users = list(mongo.db.users.find().sort("username", 1))
+    users = mongo.db.users.find().sort("username", 1)
     return render_template("index.html", users=users)
 
 
@@ -29,7 +29,7 @@ def home():
 @app.route("/recipes")
 def recipes():
     recipes = list(mongo.db.recipes.find())
-    users = list(mongo.db.users.find().sort("username", 1))
+    users = mongo.db.users.find().sort("username", 1)
     return render_template("recipes.html", recipes=recipes, users=users)
 
 
@@ -107,7 +107,7 @@ def my_recipes(username):
         {"username": session["user"]})["username"]
 
     recipes = list(mongo.db.recipes.find())
-    users = list(mongo.db.users.find().sort("username", 1))
+    users = mongo.db.users.find().sort("username", 1)
 
     if session["user"]:
         return render_template(
@@ -122,7 +122,7 @@ def full_recipe(recipe_id):
             {"_id": ObjectId(recipe_id)}
         )
     recipes = list(mongo.db.recipes.find(recipe_id))
-    users = list(mongo.db.users.find().sort("username", 1))
+    users = mongo.db.users.find().sort("username", 1)
     return render_template(
         "full_recipe.html", recipe=recipe_id, recipes=recipes, users=users)
 
@@ -199,6 +199,19 @@ def admin_page():
     diets = mongo.db.diets.find().sort("diet", 1)
     return render_template(
         "admin_page.html", users=users, recipes=recipes, diets=diets)
+
+
+@app.route("/add_diet", methods=["GET", "POST"])
+def add_diet():
+    if request.method == "POST":
+        diet = {
+            "diet": request.form.get("diet_name")
+        }
+        mongo.db.diets.insert_one(diet)
+        flash("New Diet Added")
+        return redirect(url_for("admin_page"))
+
+    return render_template("add_diet.html")
 
 
 if __name__ == "__main__":
