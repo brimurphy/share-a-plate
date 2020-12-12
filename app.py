@@ -21,13 +21,16 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("index.html")
+    users = list(mongo.db.users.find().sort("username", 1))
+    return render_template("index.html", users=users)
 
 
+# all registered users
 @app.route("/recipes")
 def recipes():
     recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes)
+    users = list(mongo.db.users.find().sort("username", 1))
+    return render_template("recipes.html", recipes=recipes, users=users)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -97,16 +100,18 @@ def login():
     return render_template("login.html")
 
 
+# registered users
 @app.route("/my_recipes/<username>", methods=["GET", "POST"])
 def my_recipes(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     recipes = list(mongo.db.recipes.find())
+    users = list(mongo.db.users.find().sort("username", 1))
 
     if session["user"]:
         return render_template(
-            "my_recipes.html", username=username, recipes=recipes)
+            "my_recipes.html", username=username, recipes=recipes, users=users)
 
     return redirect(url_for("login"))
 
@@ -117,14 +122,16 @@ def full_recipe(recipe_id):
             {"_id": ObjectId(recipe_id)}
         )
     recipes = list(mongo.db.recipes.find(recipe_id))
+    users = list(mongo.db.users.find().sort("username", 1))
     return render_template(
-        "full_recipe.html", recipe=recipe_id, recipes=recipes)
+        "full_recipe.html", recipe=recipe_id, recipes=recipes, users=users)
 
 
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    users = list(mongo.db.users.find().sort("username", 1))
     if request.method == "POST":
         recipe = {
             "diet": request.form.get("diet"),
@@ -140,7 +147,7 @@ def add_recipe():
         flash("Recipe added, Thanks for sharing")
         return redirect(url_for("my_recipes", username=username))
     diets = mongo.db.diets.find().sort("diet", 1)
-    return render_template("add_recipe.html", diets=diets)
+    return render_template("add_recipe.html", diets=diets, users=users)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -182,6 +189,16 @@ def logout():
     # use pop instead of clear as affects flash msg
     session.pop("user")
     return redirect(url_for("login"))
+
+
+# admin users
+@app.route("/admin_page")
+def admin_page():
+    users = list(mongo.db.users.find().sort("username", 1))
+    recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
+    diets = mongo.db.diets.find().sort("diet", 1)
+    return render_template(
+        "admin_page.html", users=users, recipes=recipes, diets=diets)
 
 
 if __name__ == "__main__":

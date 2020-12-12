@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+  {% block content %}
+
+    <!-- admin users -->
+   <section>
+     <h3 class="center-align header-text text-shadow">Users</h3> 
+     <div class="row  z-depth-2">
+       {% for user in users %}  
+         <div class="col s12 m4">
+           <div class="card grey-bg">
+             <div class="card-content black-text">
+               <span class="card-title center-align text-shadow">{{ user.username|capitalize }}</span>
+               <p><strong>Email: </strong>{{ user.email }}</p>
+               <p><strong>Admin: </strong>{{ user.is_superuser }}</p>
+             </div>
+             <div class="card-action center-align">
+               <a href="#" class="btn turquoise-bg text-shadow btn-font">Edit</a>
+               <a href="#" class="btn red darken-1 text-shadow btn-font">Delete</a>
+             </div>
+           </div>
+         </div>
+       {% endfor %}
+     </div>
+   </section>
+
+   <!-- recipes -->
+   <section>
+     <h3 class="center-align header-text text-shadow">Recipes</h3>  
+     <div class="row  z-depth-2">
+       {% for recipe in recipes %}  
+         <div class="col s12 m4">
+           <div class="card grey-bg">
+             <div class="card-content black-text">
+               <span class="card-title center-align text-shadow">{{ recipe.recipe_name|capitalize }}</span>
+               <p><strong>By: </strong>{{ recipe.username|capitalize }}</p>
+             </div>
+             <div class="card-action center-align">
+               <a href="#" class="btn turquoise-bg text-shadow btn-font">Edit</a>
+               <a href="#" class="btn red darken-1 text-shadow btn-font">Delete</a>
+             </div>
+           </div>
+         </div>
+       {% endfor %}
+     </div>
+   </section>
+
+   <!-- diets -->
+   <section>
+     <h3 class="center-align header-text text-shadow">Diets</h3>  
+     <div class="row  z-depth-2">
+       {% for diet in diets %}  
+         <div class="col s12 m4">
+           <div class="card grey-bg">
+             <div class="card-content black-text">
+               <span class="card-title center-align text-shadow">{{ diet.diet|capitalize }}</span>
+             </div>
+             <div class="card-action center-align">
+               <a href="#" class="btn turquoise-bg text-shadow btn-font">Edit</a>
+               <a href="#" class="btn red darken-1 text-shadow btn-font">Delete</a>
+             </div>
+           </div>
+         </div>
+       {% endfor %}
+     </div>
+   </section>
+
+
+
+  {% endblock %}
