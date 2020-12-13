@@ -56,12 +56,11 @@
               <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
             {% if session.user %}
               <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
-              <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-              {% for user in users %}
-                {% if user.is_superuser %}
+              <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li> 
+                {% if session.is_superuser %}
                   <li><a href="{{ url_for('admin_page') }}">Admin Controls</a></li>
                 {% endif %}
-              {% endfor %}
+              
               <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
               <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -72,18 +71,18 @@
       </nav>
 
       <!-- Mobile Nav -->
-      <ul class="sidenav orange-bg" id="mobile-demo">
+      <ul class="sidenav orange-bg text-shadow" id="mobile-demo">
         <li><h4 class="center-align turquoise-text heading-sidenav header-text">Share A Plate</h4></li>
-        <li><a href="{{ url_for('home') }}">Home</a></li>
-        <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+        <li><a href="{{ url_for('home') }}" class="white-text big-text">Home</a></li>
+        <li><a href="{{ url_for('recipes') }}" class="white-text big-text">Recipes</a></li>
           {% if session.user %}
-            <li><a href="{{ url_for('my_recipes', username=session['user']) }}">My Recipes</a></li>
-            <li><a href="{{ url_for('add_recipe') }}">Add Recipe</a></li>
-            <li><a href="{{ url_for('admin_page') }}">Admin Controls</a></li>
-            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            <li><a href="{{ url_for('my_recipes', username=session['user']) }}" class="white-text big-text">My Recipes</a></li>
+            <li><a href="{{ url_for('add_recipe') }}" class="white-text big-text">Add Recipe</a></li>
+            <li><a href="{{ url_for('admin_page') }}" class="white-text big-text">Admin Controls</a></li>
+            <li><a href="{{ url_for('logout') }}" class="white-text big-text">Log Out</a></li>
           {% else %}
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="{{ url_for('login') }}" class="white-text big-text">Log In</a></li>
+            <li><a href="{{ url_for('register') }}" class="white-text big-text">Register</a></li>
           {% endif %}
       </ul>
     </header>

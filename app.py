@@ -92,6 +92,7 @@ def login():
             if check_password_hash(
               registered_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
+                session["is_superuser"] = registered_user["is_superuser"]
                 flash("Welcome {}, what are we cooking today?".format(
                     request.form.get("username").capitalize()))
                 return redirect(
@@ -196,29 +197,36 @@ def logout():
     flash("You've Successfully Logged Out")
     # use pop instead of clear as affects flash msg
     session.pop("user")
+    session.pop("is_superuser")
     return redirect(url_for("login"))
 
 
 # admin users
 @app.route("/admin_page")
 def admin_page():
-    users = list(mongo.db.users.find().sort("username", 1))
-    recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
-    diets = mongo.db.diets.find().sort("diet", 1)
-    return render_template(
-        "admin_page.html", users=users, recipes=recipes, diets=diets)
+    if 'user' in session:
+        db_user = mongo.db.users.find_one(
+           {"username": session["user"]})
+        if db_user["is_superuser"]:
+            users = list(mongo.db.users.find().sort("username", 1))
+            recipes = list(mongo.db.recipes.find().sort("recipe_name", 1))
+            diets = mongo.db.diets.find().sort("diet", 1)
+            return render_template(
+                "admin_page.html", users=users, recipes=recipes, diets=diets)
+        else:
+            return redirect(
+                url_for("my_recipes", username=db_user["username"]))
+    else:
+        return redirect(url_for("recipes"))
 
 
 @app.route("/edit_user/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
     if request.method == "POST":
         update = {
-            "username": request.form.get("edit_username"),
-            "email": request.form.get("edit_email"),
-            "password": request.form.get("edit_password"),
             "is_superuser": request.form.get("edit_user")
         }
-        mongo.db.users.update({"_id": ObjectId(user_id)}, update)
+        mongo.db.users.update_one({"_id": ObjectId(user_id)}, {"$set": update})
         flash("User Updated")
         return redirect(url_for("admin_page"))
     user = mongo.db.users.find_one({"_id": ObjectId(user_id)})
