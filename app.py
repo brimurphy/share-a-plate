@@ -33,6 +33,14 @@ def recipes():
     return render_template("recipes.html", recipes=recipes, users=users)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    users = mongo.db.users.find().sort("username", 1)
+    return render_template("recipes.html", recipes=recipes, users=users)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -205,6 +213,9 @@ def admin_page():
 def edit_user(user_id):
     if request.method == "POST":
         update = {
+            "username": request.form.get("edit_username"),
+            "email": request.form.get("edit_email"),
+            "password": request.form.get("edit_password"),
             "is_superuser": request.form.get("edit_user")
         }
         mongo.db.users.update({"_id": ObjectId(user_id)}, update)
