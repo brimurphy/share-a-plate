@@ -10,7 +10,35 @@ in one handy location.
 
 ## Table of Contents
 
-<!-- Space reserved for contents -->
+1. [User Experience](#ux)
+
+- [User Stories](#user-stories)
+
+- [Design](#design)
+
+- [Features](#features)
+
+- [Future Features](#future-features)
+
+- [Wireframes](#wireframes)
+
+- [Technologies Used](#technologies-used)
+
+- [Testing](#testing)
+
+2. [Deployment](#deployment)
+
+- 
+
+- 
+
+3. [Credits](#credits)
+
+- [Content](#content)
+
+- [Media](#media)
+
+- [Acknowledgements](#acknowledgements)
 
 ## User Experience (UX)
 
@@ -112,7 +140,6 @@ in one handy location.
    <!-- Add future features here -->
 
 ## Technologies Used
-<!-- Add more technologies as used here -->
 
   * Languages 
 
