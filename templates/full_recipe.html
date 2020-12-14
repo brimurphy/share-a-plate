@@ -33,12 +33,16 @@
               <p class="recipe-key"><strong>Diet: </strong>{{ recipe.diet.capitalize() }}</p>
               <p class="recipe-key"><strong>Ingredients: </strong>
                 <ul class="ingredient">
-                  <li>{{ recipe.recipe_ingredients }}</li>
+                  {% for ingredient in recipe.recipe_ingredients %}
+                    <li>{{ ingredient }}</li>
+                  {% endfor %}
                 </ul>
               </p>
               <p class="recipe-key"><strong>Method:</strong>
                 <ul class="recipe-method">
-                  <li>{{ recipe.recipe_method }}</li>    
+                  {% for step in recipe.recipe_method %}  
+                    <li>{{ step }}</li>    
+                  {% endfor %}
                 </ul>
               </p>
             </div>
