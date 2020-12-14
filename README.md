@@ -64,18 +64,10 @@ in one handy location.
   I have used [Inknut Antiqua](https://fonts.google.com/specimen/Inknut+Antiqua?query=Inknut+Antiqua) for the Headings and Nav links
   and [Rubik](https://fonts.google.com/specimen/Rubik?sidebar.open=true) for the content of the project. I really think these fonts 
   work well together
-  
-  ### Images
-
-  The sites logo is a design by [Jaylyn Breaux](https://www.behance.net/JBDesignWorks) and can be found on [Behance](https://www.behance.net/gallery/67910949/Share-A-Plate-App-Icon-Designs).
-  I have edited the colours to link in with my colour pallette using [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
-
-  <!-- Reserved for Images -->
 
   ### Wireframes
 
   I've created the wireframes for this project using Balsamiq Wireframes
-
   To view the wireframes of this project click [HERE](https://github.com/brimurphy/share-a-plate/tree/master/static/images/wireframes)
 
   ### Original Sketches
@@ -131,15 +123,17 @@ in one handy location.
 
   * Frontend
 
-    - [Materialize](https://materializecss.com/) - Framework used for responsive layout, navigation, recipe cards <!-- (Add more) -->
-    - [Font Awesome](https://fontawesome.com/v4.7.0/icons/) - <!-- (Add what was used) -->
+    - [Materialize](https://materializecss.com/)
+    - [Font Awesome](https://fontawesome.com/v4.7.0/icons/) 
+    - [Material Design Icons](https://material.io/resources/icons/?style=baseline)
+    - [Favicon](https://favicon.io/)
     
   * Backend
 
     - [Flask]()
     - [PyMongo]()
     - [Werkzueg]()
-    - [Jinja]()
+    - [Jinja2]()
     - [MongoDB]()
 
   * Other
@@ -153,6 +147,7 @@ in one handy location.
     - [Google Fonts](https://fonts.google.com/)
     - [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
     - [Remove BG](https://www.remove.bg/)
+    
 
 
 ## Testing
@@ -166,7 +161,7 @@ in one handy location.
   * [Python3](https://www.python.org/downloads/)
   * [PIP](https://pypi.org/project/pip/) For installing packages in Python
   * [Git](https://git-scm.com/downloads) For version control
-  * An IDE of your choice - I have used [Visual Studio Code](https://code.visualstudio.com/)
+  * An IDE of your choice - I have used [gitpod](https://gitpod.io/)
   * [Heroku](https://devcenter.heroku.com/)
   * [MongoDB](https://www.mongodb.com/) For constructing database
 
@@ -188,12 +183,37 @@ in one handy location.
 
 ### Content
 
+I have used [Eat Your Books](https://www.eatyourbooks.com/) welcome message 
+*Join a community of cookbook lovers & discover that Eat Your Books is a great way to make better use of your own collection*
+As the base of my own welcome message and built on it. 
+
+The original content for my footer is from [My Foodbook](https://myfoodbook.com.au/), again I have altered the content to better tie in with my website
 <!-- Add written content sources here -->
 
 ### Media 
 
+The sites logo is a design by [Jaylyn Breaux](https://www.behance.net/JBDesignWorks) and can be found on [Behance](https://www.behance.net/gallery/67910949/Share-A-Plate-App-Icon-Designs).
+I have edited the colours to link in with my colour pallette using [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
+
+The hero-image I found on [https://www.pnas.org/content/116/37/18152](https://www.pnas.org/content/116/37/18152) and downloaded it from the Download figure button.
+The creater of the image is by Olga Klochanko and this picture and more of her work can be found at [Shutterstock](https://www.shutterstock.com/g/klochanko)
+
+The 'Plate clipart broken' image used on the 404.html page can be found on [Web Stock Review](https://webstockreview.net/pict/getfirst)
 <!-- Add Media and Image sources here -->
 
 ### Acknowledgements
+
+For information to help implement :first-of-type selector and :first-child I read this article on [CSS-Tricks](https://css-tricks.com/almanac/selectors/f/first-of-type/#:~:text=The%20%3Afirst%2Dof%2Dtype,with%20parent%20and%20sibling%20content.)
+The article is by Sara Cope and you can check out more of her articles [here]([Sara Cope](https://css-tricks.com/author/saracope/))
+
+To implement the use of CSS Counter I read [W3 Schools](https://www.w3schools.com/css/css_counters.asp) and [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters) tutorials and explanation on using the CSS Variable
+
+To create the back button on the full_recipe and 404 pages I followed Niel McEwen jquery events in jquery tutorials in the Interactive Frontend Development module of [Code Institute's](https://codeinstitute.net/full-stack-software-development-diploma/) Full Stack Software Development course
+I also used [W3 Schools](https://www.w3schools.com/js/js_window_history.asp) tutorial on these buttons.
+
+For help handling the 404 error in Flask [Geeks for Geeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/)
+
+To help with implementing the /admin_page checks to allow admins access to higher righs I have been tutored by Shane Murphy
+He helped me understand the use of the session variable. His tutoring helped me set the is_superuser check to allow users with admin privaleges access to the admin page
 
 <!-- Add acknowledgements here -->
