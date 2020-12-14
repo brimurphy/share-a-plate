@@ -4,41 +4,28 @@
     <!-- add diet admin -->
     <section class="row">
       <div class="col s12 heading-full-recipe orange-bg">
-        <h3 class="center-align header-text text-shadow">Edit User</h3>        
+        <h3 class="center-align header-text text-shadow">Add Admin Rights</h3>        
       </div>
       <div class="row">
         <form class="col s12 add-recipe" method="POST" action="{{ url_for('edit_user', user_id=user._id) }}">
           <!-- edit user admin control -->
           <div class="row">
-            <div class="input-field col s12 m8 offset-m2">
-              <i class="material-icons prefix turquoise-text">add</i>
-              <input placeholder="Is Admin" 
-                id="edit_user" 
-                name="edit_user"
-                minlength="3" 
-                maxlength="20" 
-                type="text" 
-                value="{{ user.is_superuser }}"
-                class="validate" 
-                required>
-              <label for="edit_user">Is Admin</label>
+            <div class="input-field col s12">
+              <div class="switch center-align">
+                <i class="fa fa-user-md prefix turquoise-text" aria-hidden="true"></i>
+                  <label for="is_superuser">
+                    Off
+                    {% if user.is_superuser %}
+                      <input type="checkbox" id="is_superuser" name="is_superuser" checked>
+                    {% else %}
+                      <input type="checkbox" id="is_superuser" name="is_superuser">
+                    {% endif %}
+                    <span class="lever"></span>
+                    On
+                  </label>
+              </div>
             </div>
           </div>
-          <!-- <div class="switch center-align">
-            <label for="edit_user">
-              Off
-              <input 
-                id="edit_user" 
-                name="edit_user"
-                minlength="3" 
-                maxlength="20" 
-                type="checkbox" 
-                value="{{ user.is_superuser }}"
-                class="validate">
-              <span class="lever"></span>
-              On
-            </label>
-          </div> -->
 
           <!-- submit/cancel buttons -->
           <div class="row">

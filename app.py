@@ -142,8 +142,8 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "cooking_time": request.form.get("cooking_time"),
             "recipe_img": request.form.get("recipe_img"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_method": request.form.get("recipe_method"),
+            "recipe_ingredients": list(request.form.get("recipe_ingredients")),
+            "recipe_method": list(request.form.get("recipe_method")),
             "username": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -164,8 +164,8 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "cooking_time": request.form.get("cooking_time"),
             "recipe_img": request.form.get("recipe_img"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_method": request.form.get("recipe_method"),
+            "recipe_ingredients": list(request.form.get("recipe_ingredients")),
+            "recipe_method": list(request.form.get("recipe_method")),
             "username": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, update)
@@ -220,7 +220,7 @@ def admin_page():
 def edit_user(user_id):
     if request.method == "POST":
         update = {
-            "is_superuser": request.form.get("edit_user")
+            "is_superuser": bool(request.form.get("is_superuser"))
         }
         mongo.db.users.update_one({"_id": ObjectId(user_id)}, {"$set": update})
         flash("User Updated")

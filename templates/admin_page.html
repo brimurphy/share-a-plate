@@ -14,8 +14,14 @@
                <p><strong>Admin: </strong>{{ user.is_superuser }}</p>
              </div>
              <div class="card-action center-align">
-               <a href="{{ url_for('edit_user', user_id=user._id) }}" class="btn turquoise-bg text-shadow btn-font">Edit</a>
-               <a href="{{ url_for('delete_user', user_id=user._id) }}" class="btn red darken-1 text-shadow btn-font">Delete</a>
+               <a href="{{ url_for('edit_user', user_id=user._id) }}" 
+                 class="btn turquoise-bg text-shadow btn-font">
+                 Edit
+               </a>
+               <a href="{{ url_for('delete_user', user_id=user._id) }}" 
+                 class="btn red darken-1 text-shadow btn-font">
+                 Delete
+                </a>
              </div>
            </div>
          </div>
