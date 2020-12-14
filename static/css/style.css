@@ -12,7 +12,15 @@ body {
     font-size: 16px;
     color: #141414;
     background-color: rgb(238, 238, 238);
+    /* materialize sticky footer style */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
+ /* materialize sticky footer style */
+main {
+    flex: 1 0 auto;
+  }
 
 /* colors */
 
@@ -104,6 +112,10 @@ body {
     font-family: "Inknut Antiqua", sans-serif;
 }
 
+#btn-back {
+    margin: 1rem;
+}
+
 .home-screen {
     border: 1px solid #141414;
     margin-top: 4rem;
@@ -113,12 +125,20 @@ body {
     padding: 20px 0 40px;
 }
 
+.hero-img {
+    max-width: 100%;
+}
+
 .flashes {
     margin-top: 1rem;
     padding: 5px;
     line-height: 1.5;
     width: 50%;
     border-radius: 5px;
+}
+
+li > a.big-text {
+    font-size: 1.2em;
 }
 
 /* recipe cards */
