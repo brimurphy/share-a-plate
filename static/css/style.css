@@ -121,8 +121,16 @@ main {
     margin: 1rem;
 }
 
-.btn:hover, .btn-large:hover, .btn-small:hover {
+.orange-bg.btn:hover,
+.orange-bg.btn-large:hover, 
+.orange-bg.btn-small:hover {
     background-color: #3acabb;
+}
+
+.turquoise-bg.btn:hover,
+.turquoise-bg.btn-large:hover, 
+.turquoise-bg.btn-small:hover {
+    background-color: #2ea196;
 }
 
 .home-screen {
@@ -253,6 +261,11 @@ li > a.big-text {
         font-size: 10px;
     }
 
+    .btn-large {
+    height: 45px;
+    line-height: 45px;
+    font-size: 0.8em;
+    }
     /* remove float left from materialize style */
     .row .col.no-float {
     float: none;
