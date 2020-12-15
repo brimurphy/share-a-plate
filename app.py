@@ -5,7 +5,6 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from copy import copy
 if os.path.exists("env.py"):
     import env
 
@@ -68,8 +67,7 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password")),
-            "is_superuser": bool(False)
+            "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
 
@@ -144,8 +142,10 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "cooking_time": request.form.get("cooking_time"),
             "recipe_img": request.form.get("recipe_img"),
-            "recipe_ingredients": list(request.form.get("recipe_ingredients")),
-            "recipe_method": list(request.form.get("recipe_method")),
+            "recipe_ingredients": split_and_strip(
+                request.form.get("recipe_ingredients")),
+            "recipe_method": split_and_strip(
+                request.form.get("recipe_method")),
             "username": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
