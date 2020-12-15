@@ -3,7 +3,10 @@
 <h3 class="center-align header-text text-shadow">Register</h3>
 
 <div class="row">
-  <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+  <form 
+    class="col s12 m8 offset-m2" 
+    method="POST" 
+    action="{{ url_for('register') }}">
     <div class="card-panel">
       <!-- username -->
       <div class="row">
@@ -75,14 +78,13 @@
       </div>
       <!-- register -->
       <div class="row">
-          <button
-            class="col s4 offset-s4 btn-large center-align btn-center btn-font turquoise-bg text-shadow"
-            type="submit"
-            name="register">
-            Register
-            <i class="fa fa-thumbs-up prefix right hide-on-small-only" aria-hidden="true"></i>
+        <button
+          class="col s4 offset-s4 btn-large center-align btn-center btn-font turquoise-bg text-shadow"
+          type="submit"
+          name="register">
+          Register
         </button>
-    </div>
+      </div>
     </div>
   </form>
 </div>
