@@ -67,7 +67,8 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "is_superuser": bool(False)
         }
         mongo.db.users.insert_one(register)
 
@@ -181,6 +182,15 @@ def edit_recipe(recipe_id):
 def delete_recipe(recipe_id):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template(
+        "delete_recipe.html", username=username, recipe=recipe)
+
+
+@app.route("/confirm_delete_recipe/<recipe_id>")
+def confirm_delete_recipe(recipe_id):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe has been Deleted")
     return redirect(url_for("my_recipes", username=username))
@@ -191,7 +201,6 @@ def logout():
     flash("You've Successfully Logged Out")
     # use pop instead of clear as affects flash msg
     session.pop("user")
-    session.pop("is_superuser")
     return redirect(url_for("login"))
 
 

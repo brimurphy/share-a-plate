@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="row">
+
+  <div class="col s12 card-panel center-align">
+    <h3>Delete {{ recipe.recipe_name|capitalize() }} Recipe</h3>
+   
+    <p>Are you sure you want to delete?</p>
+    <a class="btn btn-large red darken-1 text-shadow btn-font" 
+       href="{{ url_for('confirm_delete_recipe', recipe_id=recipe._id) }}">Confirm</a>
+    <button class="btn btn-large green-bg text-shadow btn-font btn-back">
+      Back
+    </button>
+
+  </div>
+
+</section>
+
+{% endblock %}
