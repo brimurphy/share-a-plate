@@ -8,12 +8,12 @@
        {% for user in users %}  
          <div class="col s12 m4">
            <div class="card grey-bg">
-             <div class="card-content black-text">
+             <div class="card-content black-text admin-card">
                <span class="card-title center-align text-shadow">{{ user.username|capitalize }}</span>
                <p><strong>Email: </strong>{{ user.email }}</p>
                <p><strong>Admin: </strong>{{ user.is_superuser }}</p>
              </div>
-             <div class="card-action center-align">
+             <div class="card-action center-align cta-btn">
                <a href="{{ url_for('edit_user', user_id=user._id) }}" 
                  class="btn turquoise-bg text-shadow btn-font">
                  Edit
@@ -36,7 +36,7 @@
        {% for recipe in recipes %}  
          <div class="col s12 m4">
            <div class="card grey-bg">
-             <div class="card-content black-text">
+             <div class="card-content black-text admin-card">
                <span class="card-title center-align text-shadow">{{ recipe.recipe_name|capitalize }}</span>
                <p>{{ recipe.recipe_description|capitalize }}</p>
                <p><strong>By: </strong>{{ recipe.username|capitalize }}</p>
@@ -56,7 +56,7 @@
      <div class="row">
          <div class="col s12 center-align">
              <a href="{{ url_for('add_diet') }}" class="btn-large turquoise-bg text-shadow">
-               Add Diet<i class="fa fa-plus-circle prefix white-text right text-shadow"></i>
+               Add Diet<i class="fa fa-plus-circle prefix white-text right hide-on-small-only text-shadow"></i>
              </a>
          </div>
      </div>
@@ -64,7 +64,7 @@
        {% for diet in diets %}  
          <div class="col s12 m4">
            <div class="card grey-bg">
-             <div class="card-content black-text">
+             <div class="card-content black-text admin-card">
                <span class="card-title center-align text-shadow">{{ diet.diet|capitalize }}</span>
              </div>
              <div class="card-action center-align">
