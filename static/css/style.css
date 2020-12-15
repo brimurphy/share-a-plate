@@ -143,6 +143,14 @@ li > a.big-text {
 
 /* recipe cards */
 
+.card .card-image img {
+    height: 280px;
+}
+
+.card .card-content {
+    height: 170px;
+}
+
 .full-recipe,
 .add-recipe {
     position: relative;
