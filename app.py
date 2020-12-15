@@ -5,6 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
+from copy import copy
 if os.path.exists("env.py"):
     import env
 
@@ -165,19 +166,31 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "cooking_time": request.form.get("cooking_time"),
             "recipe_img": request.form.get("recipe_img"),
-            "recipe_ingredients": list(request.form.get("recipe_ingredients")),
-            "recipe_method": list(request.form.get("recipe_method")),
+            "recipe_ingredients": split_and_strip(request.form.get(
+                "recipe_ingredients")),
+            "recipe_method": split_and_strip(request.form.get(
+                "recipe_method")),
             "username": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, update)
         flash("Recipe has been Updated")
         return redirect(url_for("my_recipes", username=username))
-
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    recipe["recipe_ingredients"] = format_array(recipe["recipe_ingredients"])
+    recipe["recipe_method"] = format_array(recipe["recipe_method"])
     diets = mongo.db.diets.find().sort("diet", 1)
     return render_template("edit_recipe.html", recipe=recipe, diets=diets)
 
 
+def format_array(arr):
+    return ",".join(arr)
+
+
+def split_and_strip(arr_string):
+    return [el.strip() for el in arr_string.split(",")]
+
+
+# user delete recipes
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     username = mongo.db.users.find_one(
