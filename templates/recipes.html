@@ -4,15 +4,15 @@
 
   <section class="row card-panel grey lighten-5">
     <form action="{{ url_for('search') }}" method="POST" class="col s12">
-      <div class="row valign-wrapper center-align">
-        <div class="input-field s12 m8">
+      <div class="row center-align">
+        <div class="input-field s12">
             <i class="fa fa-search prefix turquoise-text"></i>
             <input type="text" name="query" id="query" size="70%" minlenght="3" class="validate" required>
             <label for="query">Search by Recipe or Ingredient</label>
         </div>  
-        <div class="col s12 m4">
-            <button type="submit" class="btn text-shadow turquoise-bg btn-font">Search</button>
-            <a href="{{ url_for('recipes') }}" class="red btn text-shadow btn-font">Cancel</a>
+        <div class="col s8 offset-s2">
+            <button type="submit" class="btn btn-search text-shadow turquoise-bg btn-font">Search</button>
+            <a href="{{ url_for('recipes') }}" class="red btn btn-search text-shadow btn-font">Cancel</a>
         </div>
       </div>
     </form>

@@ -117,6 +117,10 @@ main {
     font-family: "Inknut Antiqua", sans-serif;
 }
 
+.btn-search {
+    margin: 5px;
+}
+
 #btn-back {
     margin: 1rem;
 }
@@ -174,6 +178,10 @@ li > a.big-text {
 }
 
 /* recipe cards */
+
+.card {
+    font-size: 1.2em;
+}
 
 .card .card-image img {
     height: 280px;
@@ -270,6 +278,12 @@ li > a.big-text {
     .row .col.no-float {
     float: none;
     }
+
+    .card {
+        font-size: 1.6em;
+    }
+
+        
 
     .cta-btn > a,
     .cta-btn > button {
