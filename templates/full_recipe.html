@@ -12,9 +12,9 @@
           <!-- recipe image -->
           <div class="col s12 l6 right center-align">
             {% if session.user|lower != recipe.username|lower %}
-              <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
+              <!-- <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a> -->
             {% endif %}
-            <img src="{{ recipe.recipe_img }}" alt="Image of {{ recipe.recipe_name }}" width="400" height="300">
+            <img src="{{ recipe.recipe_img }}" alt="Image of {{ recipe.recipe_name }}">
             <div class="col s12 center-align recipe-key">
               {% if session.user|lower == recipe.username|lower %}
                 <!-- edit/delete btn -->
@@ -31,6 +31,8 @@
               <p class="recipe-key"><strong>By: </strong>{{ recipe.username.capitalize() }}</p>
               <p class="recipe-key"><strong>Cooking Time: </strong>{{ recipe.cooking_time }} min</p>
               <p class="recipe-key"><strong>Diet: </strong>{{ recipe.diet.capitalize() }}</p>
+            </div>
+            <div class="col s12 m6">
               <p class="recipe-key"><strong>Ingredients: </strong>
                 <ul class="ingredient">
                   {% for ingredient in recipe.recipe_ingredients %}
@@ -38,6 +40,8 @@
                   {% endfor %}
                 </ul>
               </p>
+            </div>
+            <div class="col s12">
               <p class="recipe-key"><strong>Method:</strong>
                 <ul class="recipe-method">
                   {% for step in recipe.recipe_method %}  

@@ -27,6 +27,10 @@ main {
     flex: 1 0 auto;
   }
 
+p, li, .card {
+        font-size: 1.2em;
+    }
+
 /* colors */
 
 .black-bg {
@@ -125,6 +129,10 @@ main {
     margin: 1rem;
 }
 
+#btn-back:hover {
+    background-color: #3acabb;
+}
+
 .orange-bg.btn:hover,
 .orange-bg.btn-large:hover, 
 .orange-bg.btn-small:hover {
@@ -178,10 +186,6 @@ li > a.big-text {
 }
 
 /* recipe cards */
-
-.card {
-    font-size: 1.2em;
-}
 
 .card .card-image img {
     height: 280px;
@@ -279,7 +283,7 @@ li > a.big-text {
     float: none;
     }
 
-    .card {
+    p, li, .card {
         font-size: 1.6em;
     }
 
