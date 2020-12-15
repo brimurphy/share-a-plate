@@ -60,7 +60,6 @@
                 {% if session.is_superuser %}
                   <li><a href="{{ url_for('admin_page') }}">Admin Controls</a></li>
                 {% endif %}
-              
               <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
               <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -117,7 +116,7 @@
               <img src="{{ url_for('static', filename='images/logo.png') }}" />
             </a>
             
-            <p class="grey-text text-lighten-4">
+            <p class="grey-text text-lighten-4 footer-text">
               Share A Plate is a recipe and cookbook site where you can create your own
               personalised digital cookbooks using recipes from other members and combined with your own ideas. 
               Learn more about what makes us different from other recipe sites and cookbook products here.
@@ -125,8 +124,8 @@
               Check out some easy home recipes and get cooking.
             </p>
           </div>
-          <div class="col l4 offset-l2 s12">
-            <ul>
+          <div class="col l4 offset-l2 s12 footer-nav">
+            <ul class="center-align">
               <li><a class="grey-text text-lighten-3" href="{{ url_for('home') }}">Home</a></li>
               <li><a class="grey-text text-lighten-3" href="{{ url_for('recipes') }}">Recipes</a></li>
               {% if session.user %}

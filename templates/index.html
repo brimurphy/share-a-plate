@@ -1,35 +1,36 @@
 {% extends "base.html" %} 
   {% block content %}
 
-    <section class="row home-screen text-shadow">
+    <section class="row home-screen white">
       <h2 class="center-align header-text">Share A Plate</h2>
-      <div class="col s12">
-        <div class="col m6 hide-on-small-only">
-          <img src="{{ url_for('static', filename='images/hero-image-4.jpg') }}" />
+      <div class="col s12 center-align">
+        <div class="col m12 l6 hide-on-small-only center-align">
+          <img 
+            src="{{ url_for('static', filename='images/hero-image-4.jpg') }}"
+            alt="Table full of Food"
+            class="hero-img" />
         </div>
-        <div class="col s12 m6">
-          <div class="card medium">
-            <div class="card-content">
+        <div class="col m12 l6 no-float">
+          <div class="card medium center-align">
+            <div class="welcome-content">
               <h3 class="card-title center-align header-text text-shadow">Welcome</h3>
-              <p class="center-align">
-                Come join our community of food lovers
-                Create your own online cookbook
-                Access to all your favourite recipes
-                Together can make the world a little bit tastier!
-              </p>
+              <p class="center-align welcome-text">Come join our community of food lovers</p>
+              <p class="center-align welcome-text">Create your own online cookbook</p>
+              <p class="center-align welcome-text">Access to all your favourite recipes</p>
+              <p class="center-align welcome-text">Together we can make the world a little bit tastier!</p>
             </div>
           </div>
           {% if session.user %}
             <div class="center-align cta-btn">
               <a href="{{ url_for('logout') }}" 
-                class="btn btn-large orange-bg text-shadow btn-font">Log Out</a>
+                class="btn orange-bg text-shadow btn-font">Log Out</a>
             </div>
           {% else %}
             <div class="center-align cta-btn">
               <a href="{{ url_for('login') }}" 
-                class="btn btn-large orange-bg text-shadow btn-font">Log In</a>
+                class="btn orange-bg text-shadow btn-font">Log In</a>
               <a href="{{ url_for('register') }}"
-                class="btn btn-large orange-bg text-shadow btn-font">Register</a>
+                class="btn orange-bg text-shadow btn-font">Register</a>
            </div>
           {% endif %}   
         </div>

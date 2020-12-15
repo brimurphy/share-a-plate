@@ -6,10 +6,14 @@
     box-sizing: border-box;
  }
 
-body {
+html {
     font-family: Rubik, sans-serif;
     font-weight: 300;
     font-size: 16px;
+} 
+
+body {
+    
     color: #141414;
     background-color: rgb(238, 238, 238);
     /* materialize sticky footer style */
@@ -17,6 +21,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
 }
+
  /* materialize sticky footer style */
 main {
     flex: 1 0 auto;
@@ -116,6 +121,10 @@ main {
     margin: 1rem;
 }
 
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: #3acabb;
+}
+
 .home-screen {
     border: 1px solid #141414;
     margin-top: 4rem;
@@ -138,7 +147,22 @@ main {
 }
 
 li > a.big-text {
-    font-size: 1.2em;
+    font-size: 1.5em;
+}
+
+.welcome-content {
+    padding: 0.8em;
+}
+
+.welcome-text {
+    font-size: 1.1em;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+    margin: .2em;
+}
+
+.welcome-text:first-of-type {
+    margin-top: 2em;
 }
 
 /* recipe cards */
@@ -190,6 +214,7 @@ li > a.big-text {
 .recipe-key > a,
 .cta-btn > a,
 .cta-btn > button {
+    margin: 2px;
     margin-right: 2em;
 }
 
@@ -203,4 +228,46 @@ li > a.big-text {
 .footer-copyright li a {
     margin-right: 1.2em;
 
+}
+
+.footer-nav {
+    height: 200px;
+    position: relative;
+}
+
+
+.footer-nav ul {
+    font-size: 1.2em;
+    width: 100%;
+    margin: auto;
+    margin-top: 2em;
+    line-height: 2em;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 10px;
+    }
+
+    /* remove float left from materialize style */
+    .row .col.no-float {
+    float: none;
+    }
+
+    .cta-btn > a,
+    .cta-btn > button {
+        margin-right: 0;
+    }
+
+    .footer-nav ul li {
+        margin: 5px;
+    }
+
+    .footer-text {
+        font-size: 1.2em;    
+    }
 }
