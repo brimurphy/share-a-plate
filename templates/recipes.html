@@ -11,8 +11,14 @@
             <label for="query">Search by Recipe or Ingredient</label>
         </div>  
         <div class="col s8 offset-s2">
-            <button type="submit" class="btn btn-search text-shadow turquoise-bg btn-font">Search</button>
-            <a href="{{ url_for('recipes') }}" class="red btn btn-search text-shadow btn-font">Cancel</a>
+            <button type="submit" 
+              class="btn btn-search text-shadow turquoise-bg btn-font">
+                Search
+            </button>
+            <a href="{{ url_for('recipes') }}" 
+              class="btn red darken-1 text-shadow btn-font btn-search">
+              Cancel
+            </a>
         </div>
       </div>
     </form>
@@ -23,9 +29,8 @@
           <div class="col s12 m6 l4">
             <div class="card orange-bg">
               <div class="card-image">
-                {% if session.user %}     
-                  <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                {% endif %} 
+                <span class="text-shadow card-username">By: {{ recipe.username.capitalize() }}</span>
+                <a class="btn-floating right turquoise-bg"><i class="fa fa-heart" aria-hidden="true"></i></a>
                 <img src="{{ recipe.recipe_img }}" alt="Image of {{ recipe.recipe_name }}">
                 <span class="card-title text-shadow header-text">{{ recipe.recipe_name }}</span>
               </div>
@@ -33,8 +38,7 @@
                 <p>{{ recipe.recipe_description }}</p>
               </div>
               <div class="card-action">
-                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}">Full Recipe</a>
-                <span class="right text-shadow">By: {{ recipe.username.capitalize() }}</span>
+                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}">Full Recipe</a>   
               </div>
             </div>
           </div>
