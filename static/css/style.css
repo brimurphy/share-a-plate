@@ -27,10 +27,6 @@ main {
     flex: 1 0 auto;
   }
 
-/* p, li, .card {
-        font-size: 1rem;
-    } */
-
 /* colors */
 
 .black-bg {
@@ -129,7 +125,7 @@ main {
     margin: 5px;
 }
 
-#btn-back {
+.btn-back {
     margin: 1rem;
 }
 
@@ -224,6 +220,7 @@ li > a.big-text {
     margin-top: 2em;
 } 
 
+/* Add step counter for each method */
 .recipe-method {
     counter-reset: step;
     
@@ -248,9 +245,11 @@ li > a.big-text {
 .cta-btn > a,
 .cta-btn > button {
     margin: 4px;
-    /* margin-right: 2em; */
 }
 
+.full-recipe-img {
+    margin-top: 2rem;
+}
 /* footer */
 
 .footer-copyright li {
