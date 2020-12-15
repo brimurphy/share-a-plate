@@ -27,9 +27,9 @@ main {
     flex: 1 0 auto;
   }
 
-p, li, .card {
-        font-size: 1.2em;
-    }
+/* p, li, .card {
+        font-size: 1rem;
+    } */
 
 /* colors */
 
@@ -106,6 +106,10 @@ p, li, .card {
 }
 
 /* buttons */
+
+.btn.red.darken-1:hover {
+    background-color: #ff110c !important;
+}
 
 .btn-center {
     margin: 0 auto;
@@ -195,6 +199,15 @@ li > a.big-text {
     height: 170px;
 }
 
+.card .card-username {
+    margin: 5px;
+    padding: 5px;
+}
+
+.admin-card {
+    overflow: auto;
+}
+
 .full-recipe,
 .add-recipe {
     position: relative;
@@ -234,8 +247,8 @@ li > a.big-text {
 .recipe-key > a,
 .cta-btn > a,
 .cta-btn > button {
-    margin: 2px;
-    margin-right: 2em;
+    margin: 4px;
+    /* margin-right: 2em; */
 }
 
 /* footer */
@@ -276,7 +289,6 @@ li > a.big-text {
     .btn-large {
     height: 45px;
     line-height: 45px;
-    font-size: 0.8em;
     }
     /* remove float left from materialize style */
     .row .col.no-float {
@@ -287,7 +299,9 @@ li > a.big-text {
         font-size: 1.6em;
     }
 
-        
+    .welcome-text {   
+    line-height: 1.2;
+}
 
     .cta-btn > a,
     .cta-btn > button {
