@@ -73,7 +73,7 @@ def register():
         mongo.db.users.insert_one(register)
 
         session["user"] = request.form.get("username").lower()
-        flash("Registration Succesful!")
+        flash("Registration Successful!")
         return redirect(url_for('my_recipes', username=session["user"]))
     return render_template("register.html")
 
