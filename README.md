@@ -1,6 +1,10 @@
+![Share A Plate](/static/images/site-img.png)
+
 # Share A Plate
 
-<!-- Space reserved for site img and links to live site and github -->
+View the live site [HERE](https://share-a-plate-bm.herokuapp.com/)
+
+View the GitHub repository [Here](https://github.com/brimurphy/share-a-plate)
 
 ## About
 
@@ -28,9 +32,9 @@ in one handy location.
 
 2. [Deployment](#deployment)
 
-- 
+- [Steps for Cloning Locally](#steps-for-cloning-locally)
 
-- 
+- [Deploying to Heroku](#deploying-to-heroku)
 
 3. [Credits](#credits)
 
@@ -50,25 +54,22 @@ in one handy location.
     - As a user, I want to be able to search for recipes using specific keywords or ingredient(s)
     - As a user, I want to register if I do not have an account
     - As a user, I want to be able to log into my account
-    - As a user, I want to be able to contact the site admin with any queries I might have
     - As a user, I want a responsive design on all screen sizes
 
   * Returning User Stories
 
     - As a registered user, I want easy access to the members log in page
-    - As a registered user, I want to view my recipes and my favourite recipes from other members
+    - As a registered user, I want to view my recipes and recipes from other members
     - As a registered user, I want to be able to create new recipes
     - As a registered user, I want to be able to edit my recipes and delete them if required
     - As a registered user, I don't want other users able to edit or delete my recipes
-    - As a registered user, I want to add recipes I like to my page for quicker access
-    - As a registered user, 
-    - As a registered user,
 
   * Admin User Stories
 
-    - As an admin, I want to answer any queries a user might have through email
-    - As an admin, I want to remove reviews which are deemed to be inappropriate
+    - As an admin, I want to remove recipes that contain inappropriate language or images
     - As an admin, I want to remove users who repeatedly break the site rules
+    - As an admin, I want to be able to create other admins
+    - As an admin, I want to add, edit or delete diet categories
 
 ## Design 
 
@@ -160,6 +161,8 @@ in one handy location.
 
     * Option for user to flag or report recipes for inappropriate language or images
 
+    * Add functionality to an admin so they can be able to answer any queries a user might have through email
+
 ## Technologies Used
 
   * Languages 
@@ -196,6 +199,7 @@ in one handy location.
     - [Coolors](https://coolors.co/)
     - [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
     - [Remove BG](https://www.remove.bg/)
+    - [Am I Responsive](http://ami.responsivedesign.is/)
     
 
 
@@ -242,7 +246,7 @@ os.environ.setdefault("MONGO_DBNAME", "YOUR_MONGO_DBNAME")```
 
   8. You should now be able to run the program by entering `python3 app.py` into the terminal
 
-### Remote through Heroku
+### Deploying to Heroku
 
   1. Login to [Heroku](https://dashboard.heroku.com/)
 
@@ -270,21 +274,6 @@ os.environ.setdefault("MONGO_DBNAME", "YOUR_MONGO_DBNAME")```
 
   11. When Heroku is finished building the app you can press the `View` button to view your deployed app
 
-   
-<!-- Add steps here -->
-
-### Deploying to Heroku
-
-  1. Login to Heroku
-
-<!-- Add steps here -->
-
-### For Local Deployment
-
-#### Cloning from GitHub
-
-<!-- Add steps here -->
-
 ## Credits
 
 ### Content
@@ -294,7 +283,15 @@ I have used [Eat Your Books](https://www.eatyourbooks.com/) welcome message
 As the base of my own welcome message and built on it. 
 
 The original content for my footer is from [My Foodbook](https://myfoodbook.com.au/), again I have altered the content to better tie in with my website
-<!-- Add written content sources here -->
+
+The recipes I have used in my db are from [BBC Good Food](https://www.bbcgoodfood.com/recipes)
+  - [Ultimate quiche](https://www.bbcgoodfood.com/recipes/ultimate-quiche-lorraine)
+  - [Quick chicken hummus bowl](https://www.bbcgoodfood.com/recipes/quick-chicken-hummus-bowl)
+  - [Chilli con carne recipe](https://www.bbcgoodfood.com/recipes/chilli-con-carne-recipe)
+  - [Vegan sausage rolls](https://www.bbcgoodfood.com/recipes/vegan-sausage-rolls)
+  - [Vegan chilli](https://www.bbcgoodfood.com/recipes/vegan-chilli)
+  - [Vegan scones](https://www.bbcgoodfood.com/recipes/vegan-scones)
+  - [Coconut & kale fish curry](https://www.bbcgoodfood.com/recipes/coconut-kale-fish-curry)
 
 ### Media 
 
@@ -305,7 +302,6 @@ The hero-image I found on [https://www.pnas.org/content/116/37/18152](https://ww
 The creater of the image is by Olga Klochanko and this picture and more of her work can be found at [Shutterstock](https://www.shutterstock.com/g/klochanko)
 
 The 'Plate clipart broken' image used on the 404.html page can be found on [Web Stock Review](https://webstockreview.net/pict/getfirst)
-<!-- Add Media and Image sources here -->
 
 ### Acknowledgements
 
@@ -319,7 +315,14 @@ I also used [W3 Schools](https://www.w3schools.com/js/js_window_history.asp) tut
 
 For help handling the 404 error in Flask [Geeks for Geeks](https://www.geeksforgeeks.org/python-404-error-handling-in-flask/)
 
-To help with implementing the /admin_page checks to allow admins access to higher righs I have been tutored by Shane Murphy
+To help with implementing the /admin_page checks to allow admins access to higher rights I have been tutored by *Shane Murphy*
 He helped me understand the use of the session variable. His tutoring helped me set the is_superuser check to allow users with admin privaleges access to the admin page
+He also helped me with creating the split and strip function to display information correctly when editing a recipe.
 
-<!-- Add acknowledgements here -->
+To seperate the list for recipes and methods when displaying to the screen I used this method I found on [Kite](https://www.kite.com/python/answers/how-to-make-a-list-into-a-comma-separated-string-in-python)
+
+To tutor *Tim Nelson* for his Mini Project `Task Manager` tutorial and *Matt Rudge* for his mini Project `Thorin & Company` which I followed to ensure the setup and functionality worked correctly
+
+Thanks to my mentor *Jonathan Munz* for putting up with me and pushing me to be better
+
+Thanks to my family and friends for their help testing and pointing out my typos
