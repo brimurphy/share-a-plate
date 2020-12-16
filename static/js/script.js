@@ -4,5 +4,5 @@ $(document).ready(function () {
     // previous page
     $(".btn-back").click(function () {
         window.history.back();
-    })
+    });
 });
