@@ -6,6 +6,8 @@ View the live site [HERE](https://share-a-plate-bm.herokuapp.com/)
 
 View the GitHub repository [Here](https://github.com/brimurphy/share-a-plate)
 
+View TESTING.md [HERE](https://github.com/brimurphy/share-a-plate/blob/master/TESTING.md)
+
 ## About
 
 This website is an online community shared cookbook. A place were food lovers of all levels can interact by sharing their own recipes
@@ -205,7 +207,7 @@ in one handy location.
 
 ## Testing
 
-<!-- Add testing here/link to testing.md file -->
+View TESTING.md [HERE](https://github.com/brimurphy/share-a-plate/blob/master/TESTING.md)
   
 ## Deployment
 
