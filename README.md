@@ -80,11 +80,15 @@ in one handy location.
   shades of colours, not too bright to affect readability but a shade brighter than I would normally use.
 
   If you would like to read the articles referred to you can find them below:
+
   [Palermo Cafe](https://palermocafe.com/colors-make-hungry/)
+
   [Jenn David Design](https://jenndavid.com/colors-that-influence-food-sales-infographic/)
+
   [Ashley Anastasia Howell](https://medium.com/@ashley_howell/understanding-colour-psychology-for-restaurants-brands-dbb7ffbcecae)
 
   ![My Colour Palette](/static/images/color-palette.png)
+
   I have used [Coolors](https://coolors.co/) to help generate my Colour Palette
 
   ### Typography
@@ -100,12 +104,7 @@ in one handy location.
 
   ### Original Sketches
 
-  Below are the original sketches of the project:
-
-  ![Welcome Page](/static/images/sketches/sketch-home.jpg)  ![Recipe Page](/static/images/sketches/sketch-recipes.jpg)
-  ![My Recipes Page](/static/images/sketches/sketch-my-recipes.jpg)  ![Sign In/Up page](/static/images/sketches/sketch-sign-up.jpg)
-  ![Recipe Page Mobile and Tablet](/static/images/sketches/sketch-recipes-mob-tab.jpg)  ![My Recipe Page Mobile and Tablet](/static/images/sketches/sketch-my-recipes-mob-tab.jpg)
-  ![Sign In Page Mobile and Tablet](/static/images/sketches/sketch-sign-in-mob-tab.jpg)  ![Sign Up Page Mobile and Tablet](/static/images/sketches/sketch-sign-up-mob-tab.jpg)
+  If you wish to see the original paper sketches of the project click [HERE](https://github.com/brimurphy/share-a-plate/tree/master/static/images/sketches)
 
 ## Features
 
@@ -119,25 +118,47 @@ in one handy location.
 
     * Sign in form for existing users
 
-    * User page with custom recipes 
+    * Log Out functionality
 
-    * User page with 'favourite' recipes
+    * User page with custom recipes 
 
     * Easy navigation on all devices
 
-    * Search function to find recipes quickly
+    * Search function to find recipes quickly by entering a recipe name or ingredient
 
-    * User can delete their account
+    * User can delete their recipes
 
-    * Defensive programming for deleting recipes and users
+    * Defensive programming for deleting recipes
 
-    * Messages displayed on forms to help user fill out correctly
+    * Tips displayed on forms to help user fill out correctly
 
- <!-- Add More features as developed here -->
+    * Messages displayed when a user Registers for the first time, Logs In, Logs Out, Adds, Edits or deletes a recipe
+
+    * Admin control to delete users, create admins, delete recipes and add, edit or delete diets 
+
+    * Once In the “Recipes” page the user can browse, search and click on the available recipes to open a more detailed card of the recipe
+
+    * The user can view their own recipes by going to their "My Recipes" page
+
+    * User can only edit or delete their own recipes
 
   ### Future Features
 
-   <!-- Add future features here -->
+    * Add 'favourite' recipes page, were a collection of users favourite recipes can be found
+
+    * Add option for user to delete their profile
+
+    * Extend search criteria to include more options, like diet and cooking time
+
+    * Add users the option to add recipe images from their files as well as URL's
+
+    * Add a review or comments feature so users can offer advice and give kudos for recipes they enjoyed
+
+    * Limit the amount of recipes are viewable on a page to reduce scrolling by implementing a pagination feature to display 6 recipes at a time
+
+    * Add the option to share recipes to users social media accounts
+
+    * Option for user to flag or report recipes for inappropriate language or images
 
 ## Technologies Used
 
@@ -154,14 +175,16 @@ in one handy location.
     - [Font Awesome](https://fontawesome.com/v4.7.0/icons/) 
     - [Material Design Icons](https://material.io/resources/icons/?style=baseline)
     - [Favicon](https://favicon.io/)
+    - [JQuery](https://jquery.com/download/)
+    - [Google Fonts](https://fonts.google.com/)
     
   * Backend
 
-    - [Flask]()
-    - [PyMongo]()
-    - [Werkzueg]()
-    - [Jinja2]()
-    - [MongoDB]()
+    - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+    - [Werkzueg](https://werkzeug.palletsprojects.com/en/1.0.x/)
+    - [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/)
+    - [MongoDB](https://www.mongodb.com/)
 
   * Other
 
@@ -171,7 +194,6 @@ in one handy location.
     - [Balsamiq](https://balsamiq.com/)
     - [RandomKeygen](https://randomkeygen.com/)
     - [Coolors](https://coolors.co/)
-    - [Google Fonts](https://fonts.google.com/)
     - [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
     - [Remove BG](https://www.remove.bg/)
     
