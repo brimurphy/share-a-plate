@@ -212,8 +212,65 @@ in one handy location.
   * [Git](https://git-scm.com/downloads) For version control
   * An IDE of your choice - I have used [gitpod](https://gitpod.io/)
   * [Heroku](https://devcenter.heroku.com/)
-  * [MongoDB](https://www.mongodb.com/) For constructing database
+  * [MongoDB](https://www.mongodb.com/)
 
+### Steps for Cloning Locally
+
+  1. Go to the project repository [Share A Plate](https://github.com/brimurphy/share-a-plate)
+
+  2. Open Git and select clone from the repository tab. Enter source location [Share A Plate](https://github.com/brimurphy/share-a-plate) and
+     the location you wish to store the files and press the clone button
+
+  3. Open your IDE and navigate to the directory where you stored the cloned files
+
+  4. Install requirements from requirements.txt file by entering
+     `pip3 install -r requirements.txt` in the terminal
+
+  5. Activate your virtual environment by `py -m venv virtual` into the terminal
+
+  6. Create an environment file `env.py` to store environment variables. Add environment variables as shown:
+  ```
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "ADD_YOUR_SECRET_KEY")
+os.environ.setdefault("MONGO_URI", "YOUR_MONGODB_URI")
+os.environ.setdefault("MONGO_DBNAME", "YOUR_MONGO_DBNAME")```
+
+  * Remember to update your **Secret  Key**, **Database Name** and **Database URI**
+
+  7. Add `env.py` to a `.gitignore` file so sensitive data will not be pushed to GIT
+
+  8. You should now be able to run the program by entering `python3 app.py` into the terminal
+
+### Remote through Heroku
+
+  1. Login to [Heroku](https://dashboard.heroku.com/)
+
+  2. Go to `Create new App` from `New` tab
+
+  3. Go to settings
+
+  4. Click on `Reveal Config Vars` to add environment variables to match env.py file
+
+  5. Click on `Deploy` tab and set to automatically deploy from GitHub by entering the repository name [Share A Plate](https://github.com/brimurphy/share-a-plate)
+
+  6. Click on connect
+
+  7. In your IDE create the requirements.txt file to contain all dependencies
+
+  ` pip3 freeze --local > requirements.txt`
+
+  8. Create the Procfile
+
+  `echo web: python app.py > Procfile`
+
+  9. Make sure all files have been pushed to GitHub repository 
+
+  10. In Heroku in the `Deploy` tab scroll down to `Manual deploy` and click `Deploy Branch`
+
+  11. When Heroku is finished building the app you can press the `View` button to view your deployed app
+
+   
 <!-- Add steps here -->
 
 ### Deploying to Heroku
